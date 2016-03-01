@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+user1:
+  first_name: First
+  last_name: Last
+  login: first.last
+  password: password
+  email: first@last.com
+
+user2:
+  first_name: Second
+  last_name: User
+  login: second.user
+  password: passwordSecure123
+  email: second@iser.com
+
+user3:
+  first_name: Second
+  last_name: User
+  login: second.user2
+  password: passwordSecure123
+  email: second@user.com
