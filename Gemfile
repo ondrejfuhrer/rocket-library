@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'rails_admin'
 gem 'simple_form'
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -47,6 +48,5 @@ group :development, :test do
 
   gem 'factory_girl_rails'
 
-  gem 'bootstrap', '~> 4.0.0.alpha3'
 
 end
