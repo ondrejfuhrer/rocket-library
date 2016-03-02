@@ -11,6 +11,6 @@ class Rental < ActiveRecord::Base
   end
 
   belongs_to :user
-  has_one :book
+  belongs_to :book
 
 end
