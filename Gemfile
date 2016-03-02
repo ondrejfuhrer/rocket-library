@@ -26,6 +26,7 @@ gem 'devise'
 gem 'rails_admin'
 gem 'simple_form'
 gem 'bootstrap', '~> 4.0.0.alpha3'
+gem 'bootstrap_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
