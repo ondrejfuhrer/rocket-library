@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Account</h1>
+
+<h2>Active rentals</h2>
+<table>
+  <thead>
+    <tr>
+      <th>SKU</th>
+      <th>Book name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.rentals.active.each do |rental| %>
+      <tr>
+        <td><%= rental.book.sku %></td>
+        <td><%= rental.book.name %></td>
+        <td><%= link_to 'Return', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h2>Past rentals</h2>
+<table>
+  <thead>
+  <tr>
+    <th>SKU</th>
+    <th>Book name</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @user.rentals.returned.each do |rental| %>
+    <tr>
+      <td><%= rental.book.sku %></td>
+      <td><%= rental.book.name %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

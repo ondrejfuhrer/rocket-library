@@ -2,7 +2,7 @@ class Book < ActiveRecord::Base
   validates_presence_of :name, :author, :sku
   validates_uniqueness_of :sku
 
-  default_scope { where("state != 'deleted'") }
+  default_scope { without_states(:deleted) }
 
   state_machine initial: :active do
     event :remove do
@@ -14,7 +14,7 @@ class Book < ActiveRecord::Base
     end
 
     event :release do
-      transition :rent => :active
+      transition :rented => :active
     end
   end
 
