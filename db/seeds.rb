@@ -1,25 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-u = User.create do |u|
-  u.first_name = 'First'
-  u.last_name = 'Last'
-  u.email = 'first@last.com'
-  u.state = :active
-end
-
-User.create do |u|
-  u.first_name = 'Second'
-  u.last_name = 'Family'
-  u.email = 'second@family.com'
-  u.state = :active
-end
-
 Book.create do |b|
   b.name = 'To Kill a Mockingbird'
   b.author = 'Harper Lee'
@@ -75,10 +53,3 @@ Book.create do |b|
   b.sku = '12352'
   b.state = :active
 end
-
-# r = Rental.new
-# r.book = b
-# r.user = u
-# r.save
-
-

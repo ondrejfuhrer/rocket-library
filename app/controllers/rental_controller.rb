@@ -1,5 +1,6 @@
 class RentalController < ApplicationController
 
+  before_filter :authenticate_user!
   before_action :set_rental, only: [:destroy]
 
   def destroy
