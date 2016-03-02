@@ -18,3 +18,5 @@
 
 # Rubymine IDE
 .idea
+
+.rbenv-gemsets
