@@ -4,6 +4,18 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  default_scope { where("state != 'deleted'") }
+
+  state_machine initial: :new do
+    event :activate do
+      transition :new => :active
+    end
+
+    event :remove do
+      transition :active => :deleted
+    end
+  end
+
   def full_name
       self.first_name + ' ' + self.last_name
   end
