@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create do |u|
+u = User.create do |u|
   u.first_name = 'First'
   u.last_name = 'Last'
   u.email = 'first@last.com'
@@ -48,7 +48,7 @@ Book.create do |b|
   b.state = :active
 end
 
-Book.create do |b|
+b = Book.create do |b|
   b.name = 'Software Engineering for newbies'
   b.author = 'Georgios Katsanos'
   b.sku = '12349'
@@ -75,4 +75,10 @@ Book.create do |b|
   b.sku = '12352'
   b.state = :active
 end
+
+# r = Rental.new
+# r.book = b
+# r.user = u
+# r.save
+
 

@@ -18,4 +18,6 @@ class Book < ActiveRecord::Base
     end
   end
 
+  has_many :rentals
+
 end
