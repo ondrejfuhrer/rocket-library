@@ -13,12 +13,18 @@ class Ability
 
     can :read, Book
 
-    if user.role.manager?
-      can :manage, Book
-    end
+    can :new, Rental
+    can :create, Rental
 
     # Rentals
-    can :manage, Rental
+    can :delete, Rental do |r|
+      r.user == user
+    end
+
+    if user.role.manager?
+      can :manage, Book
+      can :manage, Rental
+    end
 
     can [:read, :update], User do |u|
       (u == user)
