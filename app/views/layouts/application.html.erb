@@ -21,10 +21,10 @@
                 <% if can? :read, Book %>
                   <li><%= link_to 'Books', books_path %></li>
                 <% end %>
-                <li><%= link_to 'My Account', account_path, :class=>'dropdown-toggle' %></li>
+                <li><%= link_to 'My Account', authenticated_root_path, :class=>'dropdown-toggle' %></li>
                 <% if can? :access, :rails_admin %>
                   <li><%= link_to 'Admin', rails_admin_path %></li>
-                <% end %>
+                <% end %>3
                 <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>
