@@ -1,12 +1,21 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
-  root to: 'books#index'
+  devise_scope :user do
+    authenticated :user do
+      root 'users#account', as: :authenticated_root
+    end
+
+    unauthenticated do
+      root 'devise/sessions#new', as: :unauthenticated_root
+    end
+  end
+
+  root to: 'devise/sessions#new'
 
   resources :books
   resources :rental, only: [:destroy, :new, :create]
 
-  get 'account', to: 'users#account'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

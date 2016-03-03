@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  extend Enumerize
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -9,6 +10,9 @@ class User < ActiveRecord::Base
   end
 
   has_many :rentals
+
+  ROLES = [:admin, :manager, :user]
+  enumerize :role, in: ROLES, default: :user
 
   def self.from_omniauth(access_token)
     data = access_token.info
