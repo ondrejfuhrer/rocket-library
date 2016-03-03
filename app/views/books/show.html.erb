@@ -1,19 +1,45 @@
-<p>
-  <strong>Name:</strong>
-  <%= @book.name %>
-</p>
+<ol class="breadcrumb" style="margin-bottom: 5px;">
+  <li class="active"><%= link_to 'Back', books_path %></li>
+</ol>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
+<div class="panel panel-default">
+  <div class="panel-body">
+    <ul class="list-unstyled">
+      <li>Name:<%= @book.name %></li>
+      <li>Author:<%= @book.author %></li>
+      <li>SKU:<%= @book.sku %></li>
+    </ul>
+    <% if can? :manage, @book %>
+      <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-warning' %>
+    <% end %>
+  </div>
+</div>
 
-<p>
-  <strong>SKU:</strong>
-  <%= @book.sku %>
-</p>
+<h3>Past rentals</h3>
+<% if not @book.rentals.empty? %>
 
-<% if can? :manage, @book %>
-  <%= link_to 'Edit', edit_book_path(@book) %> |
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Rented on</th>
+          <th>Returned at</th>
+          <th>User</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @book.rentals.each do |rental| %>
+          <tr>
+            <td><%= rental.created_at %></td>
+            <td><%= rental.returned_at %></td>
+            <td><%= rental.user.first_name %> <%= rental.user.last_name %></td>
+          </tr>
+      <% end %>
+      </tbody>
+    </table>
+<% else %>
+    <table class="table table-striped">
+      <td>
+        <p class="lead text-center">No Rentals for this Book yet</p>
+      </td>
+    </table>
 <% end %>
-<%= link_to 'Back', books_path %>

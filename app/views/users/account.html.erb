@@ -1,6 +1,9 @@
 <h1>Account</h1>
 
 <h3>Active rentals</h3>
+
+<% if not @user.rentals.active.empty? %>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -22,6 +25,14 @@
     <% end %>
   </tbody>
 </table>
+<% else %>
+    <table class="table table-striped">
+      <td>
+        <p class="lead text-center">No Active Rentals yet</p>
+      </td>
+    </table>
+<% end %>
+
 
 <h3>Past rentals</h3>
 <table class="table table-striped">

@@ -17,7 +17,7 @@ class Ability
     can :create, Rental
 
     # Rentals
-    can :delete, Rental do |r|
+    can :destroy, Rental do |r|
       r.user == user
     end
 
