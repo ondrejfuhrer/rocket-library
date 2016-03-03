@@ -21,35 +21,44 @@
         <ul class="nav navbar-nav navbar-right root_links">
           <% if user_signed_in? %>
 
-              <% if can? :read, Book %>
+            <% if can? :create, Rental %>
+              <li>
+                <%= link_to 'New Rental', new_rental_path %>
+              </li>
+            <% end %>
+
+            <% if can? :read, Book %>
               <li>
                 <%= link_to 'Books', books_path %>
               </li>
-              <% end %>
+            <% end %>
 
-              <% if can? :access, :rails_admin %>
-                  <li>
-                    <%= link_to 'Admin', rails_admin_path %>
-                  </li>
-              <% end %>
+            <% if can? :access, :rails_admin %>
+              <li>
+                <%= link_to 'Admin', rails_admin_path %>
+              </li>
+            <% end %>
 
-              <li>
-                <%= link_to current_user.email, authenticated_root_path, class: 'dropdown-toggle', data: {
-                    toggle: 'dropdown'
-                } %>
-              </li>
-              <li>
-                <%= link_to(@destroy_user_session_path, method: :delete) do %>
-                    <span class="label label-danger">Logout</span>
-                <% end %>
-              </li>
+            <li>
+              <%= link_to current_user.email, authenticated_root_path, class: 'dropdown-toggle', data: {
+                  toggle: 'dropdown'
+              } %>
+            </li>
+            <li>
+              <%= link_to(@destroy_user_session_path, method: :delete) do %>
+                <span class="label label-danger">Logout</span>
+              <% end %>
+            </li>
           <% else %>
-              <li><%= link_to 'Login', new_user_session_path %></li>
+            <li><%= link_to 'Login', new_user_session_path %></li>
           <% end %>
         </ul>
       </div>
     </div>
   </nav>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
   <%= yield %>
 </div>
 </body>

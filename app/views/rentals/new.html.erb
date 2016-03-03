@@ -1,0 +1,21 @@
+<h1>New Rental</h1>
+
+<%= bootstrap_form_tag url: rentals_path do |f| %>
+  <% if @rental.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rental.errors.count, 'error') %> prohibited this rental from being saved:</h2>
+
+      <ul>
+        <% @rental.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :sku %>
+  <fieldset class="actions">
+    <%= f.submit 'Rent this book', :class => 'btn btn-primary' %>
+  </fieldset>
+<% end %>
+

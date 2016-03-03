@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :rental do
+  factory :rentals do
     user "MyString"
     book "MyString"
   end
