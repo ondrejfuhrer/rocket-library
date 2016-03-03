@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root to: 'devise/sessions#new'
 
   resources :books
-  resources :rental, only: [:destroy, :new, :create]
+  resources :rentals , only: [:destroy, :new, :create, :index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
