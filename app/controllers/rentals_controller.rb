@@ -22,10 +22,11 @@ class RentalsController < ApplicationController
       if not book
         redirect_to new_rental_path, alert: "Book with SKU [#{sku}] has not been found."
       else
-        if book.rented?
-          redirect_to new_rental_path, alert: "Book with SKU [#{sku}] has been already rented by [#{book.rentals.active.first.user.full_name}]."
+        r = Rental.create book: book, user: current_user
+        if not r.validate
+          flash_error_for r, :cannot_be_created
+          render 'rentals/new'
         else
-          Rental.create book: book, user: current_user
           redirect_to authenticated_root_path, notice: 'Book has been successfully rented'
         end
       end
