@@ -11,25 +11,40 @@
 <body>
 <div class="container">
   <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand pjax" href="/">
+          Rocket Library
+        </a>
+      </div>
       <div class="collapse navbar-collapse">
-        <ul class="nav navbar-nav">
+        <ul class="nav navbar-nav navbar-right root_links">
           <% if user_signed_in? %>
-            <li class="dropdown">
-              <%= link_to current_user.email, 'javascript:void(0)', :class=>'dropdown-toggle', data: { toggle: 'dropdown'} %>
-              <ul class="dropdown-menu">
-                <% if can? :read, Book %>
-                  <li><%= link_to 'Books', books_path %></li>
+
+              <% if can? :read, Book %>
+              <li>
+                <%= link_to 'Books', books_path %>
+              </li>
+              <% end %>
+
+              <% if can? :access, :rails_admin %>
+                  <li>
+                    <%= link_to 'Admin', rails_admin_path %>
+                  </li>
+              <% end %>
+
+              <li>
+                <%= link_to current_user.email, authenticated_root_path, class: 'dropdown-toggle', data: {
+                    toggle: 'dropdown'
+                } %>
+              </li>
+              <li>
+                <%= link_to(@destroy_user_session_path, method: :delete) do %>
+                    <span class="label label-danger">Logout</span>
                 <% end %>
-                <li><%= link_to 'My Account', authenticated_root_path, :class=>'dropdown-toggle' %></li>
-                <% if can? :access, :rails_admin %>
-                  <li><%= link_to 'Admin', rails_admin_path %></li>
-                <% end %>3
-                <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </li>
+              </li>
           <% else %>
-            <li><%= link_to 'Login', new_user_session_path %></li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
           <% end %>
         </ul>
       </div>
