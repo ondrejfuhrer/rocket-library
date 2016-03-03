@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160302143930) do
     t.string   "last_name"
     t.string   "login"
     t.string   "password"
+    t.integer  "family_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
