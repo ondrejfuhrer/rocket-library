@@ -15,31 +15,8 @@
   </div>
 </div>
 
-<h3>Past rentals</h3>
-<% if not @book.rentals.empty? %>
+<h3>Active Rental</h3>
+<%= render partial: 'rental_table', locals: { active: true, rentals: @book.rentals.active } %>
 
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Rented on</th>
-          <th>Returned at</th>
-          <th>User</th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @book.rentals.each do |rental| %>
-          <tr>
-            <td><%= rental.created_at %></td>
-            <td><%= rental.returned_at %></td>
-            <td><%= rental.user.first_name %> <%= rental.user.last_name %></td>
-          </tr>
-      <% end %>
-      </tbody>
-    </table>
-<% else %>
-    <table class="table table-striped">
-      <td>
-        <p class="lead text-center">No Rentals for this Book</p>
-      </td>
-    </table>
-<% end %>
+<h3>Past rentals</h3>
+<%= render partial: 'rental_table', locals: { rentals: @book.rentals.returned } %>

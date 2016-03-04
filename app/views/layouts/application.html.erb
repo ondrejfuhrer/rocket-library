@@ -40,11 +40,11 @@
             <% end %>
 
             <li>
-              <%= link_to current_user.email, authenticated_root_path %>
+              <%= link_to current_user.email, account_path %>
             </li>
             <li>
-              <%= link_to(@destroy_user_session_path, method: :delete) do %>
-                <span class="label label-danger">Logout</span>
+              <%= link_to(destroy_user_session_path, method: :delete) do %>
+                <span class="label label-danger">Log out</span>
               <% end %>
             </li>
           <% else %>

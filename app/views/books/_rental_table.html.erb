@@ -1,0 +1,39 @@
+<% if not rentals.empty? %>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>Rented on</th>
+      <% if not defined?(active) or not active %>
+        <th>Returned at</th>
+      <% end %>
+      <th>User</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% rentals.each do |rental| %>
+      <tr>
+        <td><%= rental.created_at %></td>
+        <% if not defined?(active) or not active %>
+          <td><%= rental.returned_at %></td>
+        <% end %>
+        <td><%= rental.user.first_name %> <%= rental.user.last_name %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <table class="table table-striped">
+    <td>
+      <p class="lead text-center">
+        <% if defined?(empty_result_message) %>
+          <%= empty_result_message %>
+        <% elsif defined?(active) && active %>
+          No active rentals for this book
+        <% else %>
+          No rentals for this book
+        <% end %>
+      </p>
+    </td>
+  </table>
+<% end %>

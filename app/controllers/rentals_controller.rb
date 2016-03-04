@@ -1,11 +1,12 @@
 class RentalsController < ApplicationController
 
+  before_action :authenticate_user!
   load_and_authorize_resource
 
   def destroy
     @rental.return
     respond_to do |format|
-      format.html { redirect_to authenticated_root_path, notice: 'Book was successfully returned.' }
+      format.html { redirect_to account_path, notice: 'Book was successfully returned.' }
     end
   end
 
@@ -27,7 +28,7 @@ class RentalsController < ApplicationController
           flash_error_for r, :cannot_be_created
           render 'rentals/new'
         else
-          redirect_to authenticated_root_path, notice: 'Book has been successfully rented'
+          redirect_to account_path, notice: "Book [#{book.name}] has been successfully rented"
         end
       end
     end
