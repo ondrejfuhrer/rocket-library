@@ -54,9 +54,15 @@
       </div>
     </div>
   </nav>
-  <% flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, class: name %>
-  <% end -%>
+
+  <% flash.each do |name, msg| %>
+      <% if msg.is_a?(String) %>
+          <div class="alert fade in alert-<%= name == :notice ? "success" : "danger" %>">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <%= content_tag :div, msg, :id => "name" %>
+          </div>
+      <% end %>
+  <% end %>
   <%= yield %>
 </div>
 </body>
