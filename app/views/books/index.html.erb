@@ -5,7 +5,7 @@
     <th>Name</th>
     <th>Author</th>
     <th>SKU</th>
-    <th colspan="3">State</th>
+    <th colspan="4">State</th>
   </tr>
   </thead>
 
@@ -15,7 +15,12 @@
       <td><%= link_to book.name, book %></td>
       <td><%= book.author %></td>
       <td><%= book.sku %></td>
-      <td><%= book.state %></td>
+      <td><span class="<%= get_bootstrap_class_for_state book.state %>"><%= book.state %></span></td>
+      <td>
+        <% if can? :create, Rental and book.active? %>
+          <%= link_to 'Rent', rentals_path(sku: book.sku), method: :post %>
+        <% end %>
+      </td>
       <% if can? :manage, book %>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>

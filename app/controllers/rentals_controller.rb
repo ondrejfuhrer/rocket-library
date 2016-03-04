@@ -16,7 +16,7 @@ class RentalsController < ApplicationController
 
   def create
     sku = params[:sku]
-    if sku.empty?
+    if sku.blank?
       redirect_to new_rental_path, alert: 'SKU cannot be blank'
     else
       book = Book.find_by_sku sku
