@@ -1,17 +1,42 @@
 <div id="notice"><%= notice %></div>
 <div id="alert"><%= alert %></div>
-<h2>Log in</h2>
 
-<%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= f.email_field :email, autofocus: true %>
+<div class="row">
+  <div class="col-xs-5 col-centered">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+                <div class="text-center">
+                  <%= link_to omniauth_authorize_path(resource_name, provider) do %>
+                      <%= image_tag "btn_google_signin.png" %>
+                  <% end %>
+                </div>
+            <% end -%>
+        <% end -%>
+        <div class="or-container">
+          <hr class="or-hr">
+          <div id="or">or</div>
+        </div>
 
-    <%= f.password_field :password, autocomplete: 'off' %>
+        <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= f.email_field :email, autofocus: true %>
 
-  <% if devise_mapping.rememberable? -%>
-      <%= f.check_box :remember_me %>
-  <% end -%>
+            <%= f.password_field :password, autocomplete: 'off' %>
 
-    <%= f.submit 'Log in', :class => 'btn btn-primary' %>
-    <%= render 'devise/shared/links' %>
-<% end %>
+          <% if devise_mapping.rememberable? -%>
+              <%= f.check_box :remember_me %>
+          <% end -%>
+
+            <%= f.submit 'Log in', :class => 'btn btn-primary' %>
+
+        <% end %>
+
+      </div>
+      <div class="panel-footer">
+        <%= render 'devise/shared/links' %>
+      </div>
+    </div>
+  </div>
+</div>
 
