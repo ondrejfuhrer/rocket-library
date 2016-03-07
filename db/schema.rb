@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160303121843) do
+ActiveRecord::Schema.define(version: 20160307152511) do
 
   create_table "books", force: :cascade do |t|
     t.text     "name"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160303121843) do
     t.string   "last_sign_in_ip"
     t.string   "state"
     t.string   "role"
+    t.string   "google_avatar_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
