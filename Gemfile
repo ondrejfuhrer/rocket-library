@@ -42,6 +42,14 @@ gem 'simple_form'
 
 gem 'enumerize'
 
+# Open library REST client
+gem 'googlebooks'
+
+# Images
+gem 'mini_magick'
+gem 'carrierwave'
+# gem 'jquery-fileupload-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

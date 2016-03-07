@@ -12,7 +12,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :books
-  resources :rentals , only: [:destroy, :create, :index, :new]
+  resources :books do
+    post 'search', on: :collection
+  end
+
+  resources :rentals , only: [:destroy, :create, :index. :new]
 
 end

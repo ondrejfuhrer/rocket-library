@@ -11,8 +11,10 @@
     </div>
   <% end %>
 
+  <%= f.file_field :cover %>
   <%= f.text_field :name %>
   <%= f.text_field :author %>
+  <%= f.text_field :isbn %>
   <%= f.text_field :sku %>
   <fieldset class="actions">
     <%= f.submit 'Save', :class => 'btn btn-primary' %>

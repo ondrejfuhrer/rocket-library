@@ -1,0 +1,4 @@
+$('#search-results').empty();
+<% @results.each do |book| %>
+$("<%= j render(partial: 'search_book_row', locals: {book: book}).html_safe %>").appendTo('#search-results');
+<% end %>

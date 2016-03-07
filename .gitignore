@@ -21,3 +21,6 @@
 
 .rbenv-gemsets
 .byebug_history
+
+# File uploads
+public/uploads/*
