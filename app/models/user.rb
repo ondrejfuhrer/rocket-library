@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   end
 
   has_many :rentals
+  has_many :books
 
   ROLES = [:admin, :manager, :user]
   enumerize :role, in: ROLES, default: :user

@@ -1,0 +1,5 @@
+<% if @rental.errors.any? %>
+alert('This book cannot be rented.');
+<% else %>
+$('#book-row-<%= @rental.book.id %>').replaceWith("<%= j render(partial: 'books/books_row', locals: {book: @rental.book}).html_safe %>");
+<% end %>
