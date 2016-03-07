@@ -19,7 +19,9 @@ class User < ActiveRecord::Base
 
     user = User.where(:email => data['email']).first
 
-    unless user
+    if user
+      user.update(google_avatar_url: data.image) if data.image != user.google_avatar_url
+    else
       user = User.create(
         first_name: data['first_name'],
         last_name: data['last_name'],
@@ -28,6 +30,7 @@ class User < ActiveRecord::Base
         google_avatar_url: data.image
       )
     end
+    
     user
   end
 
