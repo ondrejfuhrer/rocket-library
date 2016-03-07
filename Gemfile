@@ -31,6 +31,9 @@ gem 'omniauth-google-oauth2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
 
+# Font Awesome
+gem "font-awesome-rails"
+
 # Rails administration
 gem 'rails_admin'
 

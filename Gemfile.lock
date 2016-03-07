@@ -343,6 +343,7 @@ DEPENDENCIES
   devise
   enumerize
   factory_girl_rails
+  font-awesome-rails
   googlebooks
   guard-rspec
   jbuilder (~> 2.0)

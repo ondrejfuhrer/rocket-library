@@ -13,21 +13,17 @@
   <!-- Tab panes -->
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="search">
-      <br/>
-      <%= bootstrap_form_tag url: search_books_path, remote: true do |f| %>
-        <div class="row">
-          <div class="col-xs-5 col-centered">
-            <%= f.text_field :isbn %>
-            <fieldset class="actions">
-              <%= f.submit 'Search', :class => 'btn btn-primary btn-block' %>
-            </fieldset>
-          </div>
+
+        <%= bootstrap_form_tag url: search_books_path, remote: true do |f| %>
+            <%= f.text_field :isbn, :placeholder => "ISBN" %>
+            <%= f.submit 'Search', :class => 'btn btn-primary', :id => 'js-search' %>
+        <% end %>
+        <div id="search-results">
+          <i class="loader fa fa-circle-o-notch fa-spin hidden"></i>
         </div>
-      <% end %>
-      <div id="search-results"></div>
 
     </div>
-    <div role="tabpanel" class="tab-pane" id="manual"><br/>
+    <div role="tabpanel" class="tab-pane" id="manual">
       <%= render 'form' %>
     </div>
   </div>

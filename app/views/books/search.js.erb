@@ -1,4 +1,7 @@
-$('#search-results').empty();
-<% @results.each do |book| %>
-$("<%= j render(partial: 'search_book_row', locals: {book: book}).html_safe %>").appendTo('#search-results');
+$('.loader').addClass('hidden');
+<% @results.each_slice(4) do |books| %>
+$('<div class="row"/>').appendTo('#search-results');
+  <% books.each do |book| %>
+    $("<%= j render(partial: 'search_book_row', locals: {book: book}).html_safe %>").appendTo('#search-results div.row:last');
+  <% end %>
 <% end %>

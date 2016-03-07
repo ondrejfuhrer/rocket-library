@@ -1,20 +1,19 @@
-<div class="panel panel-default search-row" id="search-row-<%= book.isbn %>">
-  <div class="panel-body">
-    <img src="<%= book.remote_cover_url %>"/>
-    <ul class="list-unstyled">
-      <li>Name:<%= book.name %></li>
-      <li>Author:<%= book.author %></li>
-    </ul>
-    <%= bootstrap_form_for book, remote: true do |f| %>
-      <%= f.hidden_field :cover %>
-      <%= f.hidden_field :name %>
-      <%= f.hidden_field :author %>
-      <%= f.hidden_field :isbn %>
-      <fieldset class="actions">
-        <%= f.text_field :sku %>
-        <%= f.submit 'Add', class: 'btn btn-primary', name: 'add_from_search' %>
-      </fieldset>
-    <% end %>
+<div class="col-xs-12 col-sm-4 col-md-3">
+  <div class="thumbnail search-row" id="search-row-<%= book.isbn %>">
+      <img src="<%= book.remote_cover_url.blank? ? image_path("cover_placeholder.jpg") : book.remote_cover_url %>"/>
+      <div class="caption">
+        <h4><%= book.name %></h4>
+        <p>by <%= book.author %></p>
+        <%= bootstrap_form_for book, remote: true do |f| %>
+          <%= f.hidden_field :cover %>
+          <%= f.hidden_field :name %>
+          <%= f.hidden_field :author %>
+          <%= f.hidden_field :isbn %>
+          <fieldset class="actions">
+            <%= f.text_field :sku %>
+            <%= f.submit 'Add', class: 'btn btn-primary', name: 'add_from_search' %>
+          </fieldset>
+        <% end %>
+      </div>
   </div>
 </div>
-
