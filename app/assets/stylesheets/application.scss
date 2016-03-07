@@ -22,3 +22,18 @@
 body {
     padding-top: 100px;
 }
+
+$avatar-size: 30px;
+
+.edit_user_root_link {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: (($navbar-height - $avatar-size) / 2);
+
+    & + span {
+      margin-left: ($avatar-size + 5px);
+    }
+  }
+}
