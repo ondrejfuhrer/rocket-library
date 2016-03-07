@@ -4,55 +4,76 @@
 
 <% if not @user.rentals.active.empty? %>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>SKU</th>
-      <th>Book name</th>
-      <th>Rented</th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user.rentals.active.each do |rental| %>
-      <tr>
-        <td><%= rental.book.sku %></td>
-        <td><%= link_to rental.book.name, rental.book %></td>
-        <td><%= rental.created_at %></td>
-        <td><%= link_to 'Return', rental, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @user.rentals.active.each_slice(4) do |rentals| %>
+    <div class="row">
+      <% rentals.each do |rental| %>
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <%# the img actually needs to have a class "media-object" as shown in http://getbootstrap.com/components/#media %>
+                    <%= image_tag rental.book.cover.normal %>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading"><%= link_to rental.book.name, rental.book %></h4>
+                  by <%= rental.book.author %>
+                  <br />
+                  Rented for: <%= rental.rental_time %>
+                </div>
+                <br />
+                <%= link_to 'Return', rental, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-success' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 <% else %>
-    <table class="table table-striped">
-      <td>
-        <p class="lead text-center">No Active Rentals</p>
-      </td>
-    </table>
+  <table class="table table-striped">
+    <td>
+      <p class="lead text-center">No Active Rentals</p>
+    </td>
+  </table>
 <% end %>
 
 
 <h3>Past rentals</h3>
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th>SKU</th>
-    <th>Book name</th>
-    <th>Rented</th>
-    <th>Returned</th>
-  </tr>
-  </thead>
+<% if not @user.rentals.returned.empty? %>
 
-  <tbody>
-  <% @user.rentals.returned.each do |rental| %>
-    <tr>
-      <td><%= rental.book.sku %></td>
-      <td><%= link_to rental.book.name, rental.book %></td>
-      <td><%= rental.created_at %></td>
-      <td><%= rental.returned_at %></td>
-    </tr>
+  <% @user.rentals.returned.each_slice(4) do |rentals| %>
+    <div class="row">
+      <% rentals.each do |rental| %>
+        <div class="col-sm-4">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <div class="media">
+                <div class="media-left">
+                  <a href="#">
+                    <%# the img actually needs to have a class "media-object" as shown in http://getbootstrap.com/components/#media %>
+                    <%= image_tag rental.book.cover.normal %>
+                  </a>
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading"><%= link_to rental.book.name, rental.book %></h4>
+                  by <%= rental.book.author %>
+                  <br />
+                  Rented for: <%= rental.rental_time %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-  </tbody>
-</table>
+<% else %>
+  <table class="table table-striped">
+    <td>
+      <p class="lead text-center">No Active Rentals</p>
+    </td>
+  </table>
+<% end %>

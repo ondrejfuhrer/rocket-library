@@ -26,4 +26,17 @@ class Rental < ActiveRecord::Base
     self.book.rent
   end
 
+  def rental_time
+    data = TimeDifference.between(Time.zone.now, self.created_at).in_general
+
+    result = []
+    result << "#{data[:months]} months" if data[:months] > 0
+    result << "#{data[:days]} days" if data[:days] > 0
+    result << "#{data[:hours]} hours" if data[:hours] > 0
+
+    result << 'less than hour' if result.empty?
+
+    result.join(' ')
+  end
+
 end

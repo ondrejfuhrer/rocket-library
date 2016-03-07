@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
@@ -63,6 +64,8 @@ gem 'carrierwave'
 # gem 'capistrano-rails', group: :development
 # Access an IRB console on exception pages or by using <%= console %> in views
 gem 'web-console', '~> 2.0', group: :development
+
+gem 'time_difference'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
