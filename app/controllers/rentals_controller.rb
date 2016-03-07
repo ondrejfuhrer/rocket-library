@@ -6,7 +6,7 @@ class RentalsController < ApplicationController
   def destroy
     @rental.return
     respond_to do |format|
-      format.html { redirect_to account_path, notice: 'Book was successfully returned.' }
+      format.html { redirect_to dashboard_path, notice: 'Book was successfully returned.' }
     end
   end
 
@@ -28,7 +28,7 @@ class RentalsController < ApplicationController
           flash_error_for r, :cannot_be_created
           render 'rentals/new'
         else
-          redirect_to account_path, notice: "Book [#{book.name}] has been successfully rented"
+          redirect_to dashboard_path, notice: "Book [#{book.name}] has been successfully rented"
         end
       end
     end

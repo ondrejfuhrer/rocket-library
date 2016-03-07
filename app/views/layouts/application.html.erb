@@ -40,7 +40,7 @@
             <% end %>
 
             <li>
-              <%= link_to current_user.email, account_path %>
+              <%= link_to current_user.email, dashboard_path %>
             </li>
             <li>
               <%= link_to(destroy_user_session_path, method: :delete) do %>

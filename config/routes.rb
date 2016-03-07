@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => 'omniauth_callbacks' }
   devise_scope :user do
     authenticated :user do
-      root 'rentals#new'
-      get '/', to:'rentals#new', as: :new_rental
+      root 'users#dashboard'
+      get '/', to:'users#dashboard', as: :dashboard
     end
 
     unauthenticated do
@@ -12,9 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'account', to: 'users#account'
-
   resources :books
-  resources :rentals , only: [:destroy, :create, :index]
+  resources :rentals , only: [:destroy, :create, :index, :new]
 
 end
