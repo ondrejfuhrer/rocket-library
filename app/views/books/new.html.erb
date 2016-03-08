@@ -14,13 +14,14 @@
   <div class="tab-content">
     <div role="tabpanel" class="tab-pane active" id="search">
 
-        <%= bootstrap_form_tag url: search_books_path, remote: true do |f| %>
-            <%= f.text_field :isbn, :placeholder => "ISBN" %>
-            <%= f.submit 'Search', :class => 'btn btn-primary', :id => 'js-search' %>
-        <% end %>
-        <div id="search-results">
-          <i class="loader fa fa-circle-o-notch fa-spin hidden"></i>
-        </div>
+      <%= bootstrap_form_tag url: search_books_path, remote: true do |f| %>
+        <%= f.text_field :isbn, :placeholder => 'ISBN, Author, Title...', label: 'Search' %>
+        <%= f.submit 'Search', :class => 'btn btn-primary', :id => 'js-search' %>
+      <% end %>
+      <br/>
+      <div id="search-results">
+        <i class="loader fa fa-circle-o-notch fa-spin hidden"></i>
+      </div>
 
     </div>
     <div role="tabpanel" class="tab-pane" id="manual">

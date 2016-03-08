@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-sm-4 col-md-3">
   <div class="thumbnail search-row" id="search-row-<%= book.isbn %>">
-      <img src="<%= book.remote_cover_url.blank? ? image_path("cover_placeholder.jpg") : book.remote_cover_url %>"/>
+      <img src="<%= book.cover.big %>"/>
       <div class="caption">
         <h4><%= book.name %></h4>
         <p>by <%= book.author %></p>

@@ -1,0 +1,5 @@
+<% if @book.errors.any? %>
+  alert('Book cannot be removed. Reason:\n' + '<%= @book.errors.full_messages.join('\n').html_safe %>');
+<% else %>
+  $('tr#book-row-<%= @book.id %>').fadeOut(500, function () { $(this).remove() });
+<% end %>

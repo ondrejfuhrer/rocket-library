@@ -16,6 +16,6 @@ Rails.application.routes.draw do
     post 'search', on: :collection
   end
 
-  resources :rentals , only: [:destroy, :create, :index. :new]
+  resources :rentals , only: [:destroy, :create, :index, :new]
 
 end
