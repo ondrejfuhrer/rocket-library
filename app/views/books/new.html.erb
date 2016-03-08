@@ -3,5 +3,31 @@
 </ol>
 <h1>New Book</h1>
 
-<%= render 'form' %>
+<div>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">Search</a></li>
+    <li role="presentation"><a href="#manual" aria-controls="manual" role="tab" data-toggle="tab">Manual Entry</a></li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="search">
+
+      <%= bootstrap_form_tag url: search_books_path, remote: true do |f| %>
+        <%= f.text_field :isbn, :placeholder => 'ISBN, Author, Title...', label: 'Search' %>
+        <%= f.submit 'Search', :class => 'btn btn-primary', :id => 'js-search' %>
+      <% end %>
+      <br/>
+      <div id="search-results">
+        <i class="loader fa fa-circle-o-notch fa-spin hidden"></i>
+      </div>
+
+    </div>
+    <div role="tabpanel" class="tab-pane" id="manual">
+      <%= render 'form' %>
+    </div>
+  </div>
+
+</div>
 

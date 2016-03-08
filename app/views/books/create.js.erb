@@ -1,0 +1,8 @@
+<% if @book.errors.any? %>
+  var $container = $('div#search-row-<%= @book.isbn %>').find('.actions');
+  <% @book.errors.full_messages.each do |message| %>
+    $container.prepend('<div class="alert alert-danger"><%= message %></div>');
+  <% end %>
+<% else %>
+  $('div#search-row-<%= @book.isbn %>').find('.actions').html('<div class="alert alert-success">Item has been successfully added</div>');
+<% end %>

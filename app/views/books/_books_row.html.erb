@@ -1,6 +1,8 @@
 <tr id="book-row-<%= book.id %>">
+  <td><img src="<%= book.cover.small %>" /></td>
   <td><%= link_to book.name, book %></td>
   <td><%= book.author %></td>
+  <td><%= book.isbn %></td>
   <td><%= book.sku %></td>
   <td><span class="<%= get_bootstrap_class_for_state book.state %>"><%= book.state %></span></td>
   <td>

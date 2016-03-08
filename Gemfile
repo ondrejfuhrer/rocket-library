@@ -31,6 +31,9 @@ gem 'omniauth-google-oauth2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
 
+# Font Awesome
+gem "font-awesome-rails"
+
 # Rails administration
 gem 'rails_admin'
 
@@ -41,6 +44,14 @@ gem 'state_machines-activerecord'
 gem 'simple_form'
 
 gem 'enumerize'
+
+# Open library REST client
+gem 'googlebooks'
+
+# Images
+gem 'mini_magick'
+gem 'carrierwave'
+# gem 'jquery-fileupload-rails'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

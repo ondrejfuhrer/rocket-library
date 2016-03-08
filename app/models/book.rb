@@ -18,6 +18,7 @@ class Book < ActiveRecord::Base
     end
   end
 
+  mount_uploader :cover, BookCoverUploader
   has_many :rentals
   belongs_to :user
 
