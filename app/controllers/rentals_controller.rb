@@ -6,6 +6,7 @@ class RentalsController < ApplicationController
   def destroy
     @rental.return
     respond_to do |format|
+      format.js
       format.html { redirect_to dashboard_path, notice: 'Book was successfully returned.' }
     end
   end
@@ -23,12 +24,18 @@ class RentalsController < ApplicationController
       if not book
         redirect_to new_rental_path, alert: "Book with SKU [#{sku}] has not been found."
       else
-        r = Rental.create book: book, user: current_user
-        if not r.validate
-          flash_error_for r, :cannot_be_created
-          render 'rentals/new'
+        @rental = Rental.create book: book, user: current_user
+        if not @rental.validate
+          flash_error_for @rental, :cannot_be_created
+          respond_to do |format|
+            format.js { render 'rentals/new' }
+            format.html { render 'rentals/new' }
+          end
         else
-          redirect_to dashboard_path, notice: "Book [#{book.name}] has been successfully rented"
+          respond_to do |format|
+            format.js { render 'rentals/new' }
+            format.html { redirect_to dashboard_path, notice: "Book [#{book.name}] has been successfully rented" }
+          end
         end
       end
     end

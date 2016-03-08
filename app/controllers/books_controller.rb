@@ -19,6 +19,7 @@ class BooksController < ApplicationController
 
   def create
     @book = Book.new(book_params)
+    @book.user = current_user
 
     respond_to do |format|
       if @book.save
@@ -42,6 +43,7 @@ class BooksController < ApplicationController
   def destroy
     @book.remove
     respond_to do |format|
+      format.js
       format.html { redirect_to books_url, notice: 'Book was successfully removed.' }
     end
   end

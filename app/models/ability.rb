@@ -12,6 +12,7 @@ class Ability
     end
 
     can :read, Book
+    can :create, Book
 
     can :new, Rental
     can :create, Rental
@@ -23,7 +24,10 @@ class Ability
 
     if user.role.manager?
       can :manage, Book
-      can :manage, Rental
+    else
+      can :manage, Book do |book|
+        (book.user == user)
+      end
     end
 
     can [:read, :update], User do |u|

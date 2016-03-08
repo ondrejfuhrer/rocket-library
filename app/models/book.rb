@@ -19,5 +19,6 @@ class Book < ActiveRecord::Base
   end
 
   has_many :rentals
+  belongs_to :user
 
 end
