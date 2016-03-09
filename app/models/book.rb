@@ -1,6 +1,5 @@
 class Book < ActiveRecord::Base
-  validates_presence_of :name, :author, :sku
-  validates_uniqueness_of :sku
+  validates_presence_of :name, :author
 
   default_scope { without_states(:deleted) }
 
@@ -21,5 +20,9 @@ class Book < ActiveRecord::Base
   mount_uploader :cover, BookCoverUploader
   has_many :rentals
   belongs_to :user
+
+  after_create do |book|
+    book.update(sku: book.id) if book.sku.blank?
+  end
 
 end
