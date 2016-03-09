@@ -5,19 +5,13 @@ class BooksController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @books = Book.all
-
-  end
-
-  def filter
     if params[:letter].present?
-      @books = Book.where 'books.name LIKE ? OR books.name LIKE ?', "#{params[:letter]}%", "#{params[:letter].upcase}%"
+      name_search = { name_start: params[:letter] }
+      params[:q] = params[:q].present? ? params[:q].merge(name_search) : name_search
       @selected_letter = params[:letter]
-    else
-      @books = Book.all
     end
-
-    render :index
+    @search = Book.search params[:q]
+    @books = @search.result
   end
 
   def show

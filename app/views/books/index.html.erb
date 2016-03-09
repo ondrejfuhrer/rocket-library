@@ -1,4 +1,4 @@
-<% links = ('A'..'Z').to_a.map { |letter| { letter: letter, path: alphabetic_filter_books_path(letter: letter.downcase), active: @selected_letter == letter.downcase } } %>
+<% links = ('A'..'Z').to_a.map { |letter| { letter: letter, path: alphabetic_filter_books_path(letter: letter.downcase, params: params.except(:action, :controller)), active: @selected_letter == letter.downcase } } %>
 <% links << { letter: 'All', path: books_path, active: @selected_letter.nil? } %>
 <div class="row">
   <table class="table table-striped">
@@ -9,7 +9,27 @@
     </thead>
   </table>
 </div>
-<h1>Books</h1>
+<div class="row">
+  <div class="col-sm-7"><h1>Books</h1></div>
+  <div class="col-sm-5">
+    <%# The path in here can differ (we can have search by the alphabet - different route) #%>
+    <%= search_form_for @search, url: request.env['PATH_INFO'] do |s| %>
+      <div class="form-group header-margin">
+        <div class="row">
+          <div class="col-sm-8">
+            <%= s.text_field :sku_or_name_cont, placeholder: 'Name, SKU, ...', class: 'form-control' %>
+          </div>
+          <div class="col-sm-2">
+            <%= s.submit 'Search', class: 'btn btn-primary' %>
+          </div>
+          <div class="col-sm-2">
+            <%= link_to 'Clear', books_path, class: 'btn btn-default' %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 <table class="table table-striped">
   <% if @books.empty? %>
     <tr>

@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :books do
     post 'search', on: :collection
-    get '/:letter', on: :collection, as: :alphabetic_filter, to: 'books#filter', constraints: { letter: /[a-z]/ }
+    get '/:letter', on: :collection, as: :alphabetic_filter, to: 'books#index', constraints: { letter: /[a-z]/ }
   end
 
   resources :rentals, only: [:destroy, :create, :index, :new]
