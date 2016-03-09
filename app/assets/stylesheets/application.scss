@@ -12,7 +12,6 @@
  *
  *= require rails_bootstrap_forms
  */
-
 @import "bootstrap_custom_variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -23,7 +22,7 @@
 @import "font-awesome";
 
 body {
-    padding-top: 100px;
+  padding-top: 100px;
 }
 
 $avatar-size: 30px;
@@ -44,4 +43,26 @@ $avatar-size: 30px;
 .header-margin {
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.book {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.book-name {
+  align-self: flex-start;
+}
+
+.book-author {
+  align-self: flex-start;
+}
+
+.book-renting-period {
+  align-self: flex-start;
+}
+
+.book-renting-actions {
+  align-self: flex-end;
 }

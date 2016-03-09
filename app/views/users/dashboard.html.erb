@@ -7,28 +7,7 @@
   <% @user.rentals.active.each_slice(3) do |rentals| %>
     <div class="row">
       <% rentals.each do |rental| %>
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="media">
-                <div class="media-left">
-                  <a href="#">
-                    <%# the img actually needs to have a class "media-object" as shown in http://getbootstrap.com/components/#media %>
-                    <%= image_tag rental.book.cover.normal %>
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h4 class="media-heading"><%= link_to rental.book.name, rental.book %></h4>
-                  by <%= rental.book.author %>
-                  <br/>
-                  Rented for: <%= rental.rental_time %>
-                </div>
-                <br/>
-                <%= link_to 'Return', '#', data: { toggle: :modal, target: '#delete-modal', title: rental.book.name, author: rental.book.author, form_action: rental_path(rental) }, class: 'btn btn-success' %>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%= render partial: 'books/dashboard_item', locals: { rental: rental, active: true } %>
       <% end %>
     </div>
   <% end %>
@@ -47,26 +26,7 @@
   <% @user.rentals.returned.each_slice(3) do |rentals| %>
     <div class="row">
       <% rentals.each do |rental| %>
-        <div class="col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="media">
-                <div class="media-left">
-                  <a href="#">
-                    <%# the img actually needs to have a class "media-object" as shown in http://getbootstrap.com/components/#media %>
-                    <%= image_tag rental.book.cover.normal %>
-                  </a>
-                </div>
-                <div class="media-body">
-                  <h4 class="media-heading"><%= link_to rental.book.name, rental.book %></h4>
-                  by <%= rental.book.author %>
-                  <br/>
-                  Rented for: <%= rental.rental_time %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <%= render partial: 'books/dashboard_item', locals: { rental: rental } %>
       <% end %>
     </div>
   <% end %>
