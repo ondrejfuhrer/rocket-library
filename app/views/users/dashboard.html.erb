@@ -4,7 +4,7 @@
 
 <% if not @user.rentals.active.empty? %>
 
-  <% @user.rentals.active.each_slice(4) do |rentals| %>
+  <% @user.rentals.active.each_slice(3) do |rentals| %>
     <div class="row">
       <% rentals.each do |rental| %>
         <div class="col-sm-4">
@@ -20,11 +20,11 @@
                 <div class="media-body">
                   <h4 class="media-heading"><%= link_to rental.book.name, rental.book %></h4>
                   by <%= rental.book.author %>
-                  <br />
+                  <br/>
                   Rented for: <%= rental.rental_time %>
                 </div>
-                <br />
-                <%= link_to 'Return', rental, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-success' %>
+                <br/>
+                <%= link_to 'Return', '#', data: { toggle: :modal, target: '#delete-modal', title: rental.book.name, author: rental.book.author, form_action: rental_path(rental) }, class: 'btn btn-success' %>
               </div>
             </div>
           </div>
@@ -32,6 +32,7 @@
       <% end %>
     </div>
   <% end %>
+  <%= render partial: 'books/return_modal' %>
 <% else %>
   <table class="table table-striped">
     <td>
@@ -40,11 +41,10 @@
   </table>
 <% end %>
 
-
 <h3>Past rentals</h3>
 <% if not @user.rentals.returned.empty? %>
 
-  <% @user.rentals.returned.each_slice(4) do |rentals| %>
+  <% @user.rentals.returned.each_slice(3) do |rentals| %>
     <div class="row">
       <% rentals.each do |rental| %>
         <div class="col-sm-4">
@@ -60,7 +60,7 @@
                 <div class="media-body">
                   <h4 class="media-heading"><%= link_to rental.book.name, rental.book %></h4>
                   by <%= rental.book.author %>
-                  <br />
+                  <br/>
                   Rented for: <%= rental.rental_time %>
                 </div>
               </div>

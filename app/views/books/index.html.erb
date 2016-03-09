@@ -20,3 +20,4 @@
 <% if can? :create, Book %>
   <%= link_to 'Add a book', new_book_path, :class => 'btn btn-success' %>
 <% end %>
+<%= render partial: 'books/return_modal', locals: { remote: true } %>

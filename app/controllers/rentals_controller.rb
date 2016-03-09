@@ -4,6 +4,7 @@ class RentalsController < ApplicationController
   load_and_authorize_resource
 
   def destroy
+    @rental.return_message = params[:return_message] if params[:return_message].present?
     @rental.return
     respond_to do |format|
       format.js

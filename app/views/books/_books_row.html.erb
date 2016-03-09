@@ -1,5 +1,5 @@
 <tr id="book-row-<%= book.id %>">
-  <td><img src="<%= book.cover.small %>" /></td>
+  <td><img src="<%= book.cover.small %>"/></td>
   <td><%= link_to book.name, book %></td>
   <td><%= book.author %></td>
   <td><%= book.isbn %></td>
@@ -7,7 +7,12 @@
   <td><span class="<%= get_bootstrap_class_for_state book.state %>"><%= book.state %></span></td>
   <td>
     <%= link_to('Rent', rentals_path(sku: book.sku, format: :js), method: :post, remote: true) if can? :create, Rental and book.active? %>
-    <%= link_to('Return', rental_path(book.rentals.active.first, format: :js), method: :delete, remote: true) if can? :destroy, Rental and book.rented? %>
+    <% if book.rented? %>
+      <% rental = book.rentals.active.first %>
+      <% if can? :destroy, rental %>
+        <%= link_to 'Return', '#', data: { toggle: :modal, target: '#delete-modal', title: book.name, author: book.author, form_action: rental_path(rental) } %>
+      <% end %>
+    <% end %>
   </td>
   <td><%= link_to('Edit', edit_book_path(book)) if can? :edit, book %></td>
   <td><%= link_to('Delete', book_path(book, format: :js), method: :delete, data: { confirm: 'Are you sure you want to remove this item from library?' }, remote: true) if can? :destroy, book %></td>

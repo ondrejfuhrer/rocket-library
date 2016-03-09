@@ -1,0 +1,20 @@
+<% remote ||= false %>
+<div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="delete-modal-label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="delete-modal-label">Return book</h4>
+      </div>
+      <%= bootstrap_form_tag url: nil, method: :delete, html: { class: 'delete-modal' }, remote: remote do |f| %>
+        <div class="modal-body">
+          <%= f.text_area :return_message, :placeholder => 'Return Message ...', label: 'Return Message (optional):' %>
+        </div>
+        <div class="modal-footer actions">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <%= f.submit 'Return Book', class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
