@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307165205) do
+ActiveRecord::Schema.define(version: 20160308170619) do
 
   create_table "books", force: :cascade do |t|
     t.text     "name"
@@ -31,9 +31,10 @@ ActiveRecord::Schema.define(version: 20160307165205) do
     t.integer  "user_id"
     t.integer  "book_id"
     t.string   "state"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.datetime "returned_at"
+    t.text     "return_message"
   end
 
   create_table "users", force: :cascade do |t|

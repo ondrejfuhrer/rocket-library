@@ -21,6 +21,7 @@ class Rental < ActiveRecord::Base
 
   scope :active, -> { with_state(:active) }
   scope :returned, -> { with_state(:returned) }
+  default_scope { order('returned_at DESC') }
 
   after_create do
     self.book.rent

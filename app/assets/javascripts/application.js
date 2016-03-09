@@ -16,3 +16,14 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require alerts
+
+$(document).on('show.bs.modal', '#delete-modal', function (event) {
+    var button = $(event.relatedTarget); // Button / link that triggered the modal
+    var title = button.data('title');
+    var author = button.data('author');
+    var form_action = button.data('form-action');
+
+    var modal = $(this);
+    modal.find('.modal-title').text('Return book ' + author + ': ' + title);
+    modal.find('form.delete-modal').attr('action', form_action);
+});

@@ -1,23 +1,26 @@
+<% active ||= false %>
 <% if not rentals.empty? %>
 
   <table class="table table-striped">
     <thead>
     <tr>
       <th>Rented on</th>
-      <% if not defined?(active) or not active %>
-        <th>Returned at</th>
-      <% end %>
       <th>User</th>
+      <% unless active %>
+        <th>Returned for</th>
+        <th>Return Message</th>
+      <% end %>
     </tr>
     </thead>
     <tbody>
     <% rentals.each do |rental| %>
       <tr>
         <td><%= rental.created_at %></td>
-        <% if not defined?(active) or not active %>
-          <td><%= rental.returned_at %></td>
-        <% end %>
         <td><%= rental.user.first_name %> <%= rental.user.last_name %></td>
+        <% unless active %>
+          <td><%= rental.rental_time %></td>
+          <td><%= rental.return_message %></td>
+        <% end %>
       </tr>
     <% end %>
     </tbody>
@@ -26,13 +29,10 @@
   <table class="table table-striped">
     <td>
       <p class="lead text-center">
-        <% if defined?(empty_result_message) %>
-          <%= empty_result_message %>
-        <% elsif defined?(active) && active %>
-          No active rentals for this book
-        <% else %>
-          No rentals for this book
+        <% unless defined?(empty_result_message) %>
+          <% empty_result_message = active ? 'No active rentals for this book' : 'No rentals for this book' %>
         <% end %>
+        <%= empty_result_message %>
       </p>
     </td>
   </table>

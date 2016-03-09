@@ -20,7 +20,5 @@
 <h3>Active Rental</h3>
 <%= render partial: 'rental_table', locals: { active: true, rentals: @book.rentals.active } %>
 
-<% if can? :manage, Rental %>
-  <h3>Past rentals</h3>
-  <%= render partial: 'rental_table', locals: { rentals: @book.rentals.returned } %>
-<% end %>
+<h3>Past rentals</h3>
+<%= render partial: 'rental_table', locals: { rentals: @book.rentals.returned } %>
