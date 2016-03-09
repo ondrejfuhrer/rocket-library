@@ -6,10 +6,10 @@ rvm:
   - 2.3.0
 
 env:
-  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
+  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage ARCHFLAGS="-arch x86_64"
 
 before_install:
-  - sudo ARCHFLAGS="-arch x86_64" gem install pg
+  - sudo gem install pg
 
 # ensure the test output and coverage dirs are created
 before_script:
