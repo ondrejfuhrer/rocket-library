@@ -1,21 +1,38 @@
+<% links = ('A'..'Z').to_a.map { |letter| { letter: letter, path: alphabetic_filter_books_path(letter: letter.downcase), active: @selected_letter == letter.downcase } } %>
+<% links << { letter: 'All', path: books_path, active: @selected_letter.nil? } %>
+<div class="row">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <%= render partial: 'letter_filter_item', collection: links %>
+    </tr>
+    </thead>
+  </table>
+</div>
 <h1>Books</h1>
 <table class="table table-striped">
-  <thead>
-  <tr>
-    <th></th>
-    <th>Name</th>
-    <th>Author</th>
-    <th>ISBN</th>
-    <th>SKU</th>
-    <th colspan="4">State</th>
-  </tr>
-  </thead>
+  <% if @books.empty? %>
+    <tr>
+      <td><p class="lead text-center">No Books found</p></td>
+    </tr>
+  <% else %>
+    <thead>
+    <tr>
+      <th></th>
+      <th>Name</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>SKU</th>
+      <th colspan="4">State</th>
+    </tr>
+    </thead>
+    <tbody>
 
-  <tbody>
-  <% @books.each do |book| %>
-    <%= render partial: 'books_row', locals: { book: book } %>
+    <% @books.each do |book| %>
+      <%= render partial: 'books_row', locals: { book: book } %>
+    <% end %>
+    </tbody>
   <% end %>
-  </tbody>
 </table>
 <% if can? :create, Book %>
   <%= link_to 'Add a book', new_book_path, :class => 'btn btn-success' %>

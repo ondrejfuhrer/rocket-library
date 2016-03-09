@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     authenticated :user do
       root 'users#dashboard'
-      get '/', to:'users#dashboard', as: :dashboard
+      get '/', to: 'users#dashboard', as: :dashboard
     end
 
     unauthenticated do
@@ -14,8 +14,9 @@ Rails.application.routes.draw do
 
   resources :books do
     post 'search', on: :collection
+    get '/:letter', on: :collection, as: :alphabetic_filter, to: 'books#filter', constraints: { letter: /[a-z]/ }
   end
 
-  resources :rentals , only: [:destroy, :create, :index, :new]
+  resources :rentals, only: [:destroy, :create, :index, :new]
 
 end

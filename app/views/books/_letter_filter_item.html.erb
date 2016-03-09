@@ -1,0 +1,5 @@
+<th>
+  <%= letter_filter_item[:active] ? '<u><i>'.html_safe : '' %>
+  <%= link_to letter_filter_item[:letter], letter_filter_item[:path] %>
+  <%= letter_filter_item[:active] ? '</i></u>'.html_safe : '' %>
+</th>

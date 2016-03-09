@@ -1,10 +1,23 @@
 class BooksController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :set_default_letter_filter, only: [:index, :filter]
   load_and_authorize_resource
 
   def index
     @books = Book.all
+
+  end
+
+  def filter
+    if params[:letter].present?
+      @books = Book.where 'books.name LIKE ? OR books.name LIKE ?', "#{params[:letter]}%", "#{params[:letter].upcase}%"
+      @selected_letter = params[:letter]
+    else
+      @books = Book.all
+    end
+
+    render :index
   end
 
   def show
@@ -76,6 +89,10 @@ class BooksController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def book_params
     params.require(:book).permit(:name, :author, :sku, :isbn)
+  end
+
+  def set_default_letter_filter
+    @selected_letter = nil
   end
 
   def find_books(count, page = 1)
