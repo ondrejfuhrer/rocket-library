@@ -15,7 +15,7 @@
   <%= f.text_field :name %>
   <%= f.text_field :author %>
   <%= f.text_field :isbn %>
-  <%= f.text_field :sku %>
+  <%= f.text_field :sku if @book.persisted? %>
   <fieldset class="actions">
     <%= f.submit 'Save', :class => 'btn btn-primary' %>
   </fieldset>
