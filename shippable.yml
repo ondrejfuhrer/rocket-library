@@ -10,8 +10,9 @@ env:
 
 # ensure the test output and coverage dirs are created
 before_script:
+  - mkdir -p shippable/testresults
   - RAILS_ENV=test rake db:migrate
 
 # write the rspec tests to the output dir
 script:
-  - bundle exec rspec
+  - bundle exec rspec -o shippable/testresults/results.xml
