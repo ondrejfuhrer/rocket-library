@@ -6,7 +6,7 @@ rvm:
   - 2.3.0
 
 env:
-  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
+  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage ARCHFLAGS="-arch x86_64"
 
 before_install:
   - sudo apt-get -y update
@@ -19,4 +19,4 @@ before_script:
 
 # write the rspec tests to the output dir
 script:
-  - bundle exec rspec -o shippable/testresults/results.xml
+  - rspec -o shippable/testresults/results.xml
