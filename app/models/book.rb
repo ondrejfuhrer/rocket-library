@@ -1,7 +1,7 @@
 class Book < ActiveRecord::Base
   validates_presence_of :name, :author
 
-  default_scope { without_states(:deleted) }
+  default_scope { without_states(:deleted).order(:name) }
 
   state_machine initial: :active do
     event :remove do
