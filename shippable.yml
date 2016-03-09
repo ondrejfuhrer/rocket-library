@@ -8,9 +8,11 @@ rvm:
 env:
   - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
 
+before_install:
+  - ARCHFLAGS="-arch x86_64" gem install pg
+  
 # ensure the test output and coverage dirs are created
 before_script:
-  - ARCHFLAGS="-arch x86_64" gem install pg
   - mkdir -p shippable/testresults
   - RAILS_ENV=test rake db:migrate
 
