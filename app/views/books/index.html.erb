@@ -1,10 +1,9 @@
-<% links = ('A'..'Z').to_a.map { |letter| { letter: letter, path: alphabetic_filter_books_path(letter: letter.downcase, params: params.except(:action, :controller)), active: @selected_letter == letter.downcase } } %>
-<% links << { letter: 'All', path: books_path, active: @selected_letter.nil? } %>
+<% alphabetic_filter ||= [] %>
 <div class="row">
   <table class="table table-striped">
     <thead>
     <tr>
-      <%= render partial: 'letter_filter_item', collection: links %>
+      <%= render partial: 'letter_filter_item', collection: alphabetic_filter %>
     </tr>
     </thead>
   </table>

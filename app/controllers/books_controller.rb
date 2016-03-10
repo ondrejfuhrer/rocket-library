@@ -1,17 +1,31 @@
 class BooksController < ApplicationController
 
   before_action :authenticate_user!
-  before_action :set_default_letter_filter, only: [:index, :filter]
   load_and_authorize_resource
 
   def index
+    connection = ActiveRecord::Base.connection
+    available_letters = connection.execute('SELECT DISTINCT SUBSTR(LOWER(name), 1, 1) as letter FROM books').map { |l| l[0] }
     if params[:letter].present?
       name_search = { name_start: params[:letter] }
       params[:q] = params[:q].present? ? params[:q].merge(name_search) : name_search
-      @selected_letter = params[:letter]
+      selected_letter = params[:letter]
+    else
+      selected_letter = nil
     end
     @search = Book.search params[:q]
     @books = @search.result
+
+    links = ('a'..'z').to_a.map do |letter|
+      {
+        letter: letter.upcase,
+        path: available_letters.include?(letter) ? alphabetic_filter_books_path(letter: letter, params: params.except(:action, :controller)) : nil,
+        active: selected_letter == letter
+      }
+    end
+    links << { letter: 'All', path: books_path, active: selected_letter.nil? }
+
+    render 'index', locals: { alphabetic_filter: links }
   end
 
   def show
@@ -83,10 +97,6 @@ class BooksController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def book_params
     params.require(:book).permit(:name, :author, :sku, :isbn)
-  end
-
-  def set_default_letter_filter
-    @selected_letter = nil
   end
 
   def find_books(count, page = 1)

@@ -4,10 +4,10 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th>Rented on</th>
       <th>User</th>
+      <th>Rented on</th>
+      <th>Rented for</th>
       <% unless active %>
-        <th>Rented for</th>
         <th>Return Message</th>
       <% end %>
     </tr>
@@ -15,10 +15,10 @@
     <tbody>
     <% rentals.each do |rental| %>
       <tr>
+        <td><%= rental.user.full_name %></td>
         <td><%= rental.created_at %></td>
-        <td><%= rental.user.first_name %> <%= rental.user.last_name %></td>
+        <td><%= rental.rental_time %></td>
         <% unless active %>
-          <td><%= rental.rental_time %></td>
           <td><%= rental.return_message %></td>
         <% end %>
       </tr>

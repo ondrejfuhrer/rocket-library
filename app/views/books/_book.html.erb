@@ -21,8 +21,8 @@
                   <%= link_to 'Return', '#', class: 'btn btn-info', data: { toggle: :modal, target: '#delete-modal', title: book.name, author: book.author, form_action: rental_path(rental) } %>
                 <% end %>
               <% end %>
-              <%= link_to 'Edit', edit_book_path(book), class: 'btn btn-primary' %>
-              <%= link_to 'X', book_path(book), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to remove this book from library?' } %>
+              <%= link_to('Edit', edit_book_path(book), class: 'btn btn-primary') if can? :edit, book %>
+              <%= link_to('X', book_path(book), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to remove this book from library?' }) if can? :destroy, book %>
             </div>
           </div>
         </div>
