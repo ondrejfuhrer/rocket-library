@@ -23,7 +23,7 @@ class BooksController < ApplicationController
         active: selected_letter == letter
       }
     end
-    links << { letter: 'All', path: books_path, active: selected_letter.nil? }
+    links << { letter: I18n.t('application.all'), path: books_path, active: selected_letter.nil? }
 
     render 'index', locals: { alphabetic_filter: links }
   end
@@ -64,7 +64,7 @@ class BooksController < ApplicationController
         format.js
       else
         if @book.save
-          format.html { redirect_to @book, notice: 'Book was successfully added.' }
+          format.html { redirect_to books_path, notice: general_added_message(@book) }
         else
           format.html { render :new }
         end
@@ -77,7 +77,7 @@ class BooksController < ApplicationController
       params_to_update = book_params
       params_to_update[:cover] = params[:book][:cover] unless params[:book][:cover].blank?
       if @book.update(params_to_update)
-        format.html { redirect_to @book, notice: 'Book was successfully updated.' }
+        format.html { redirect_to books_path, notice: general_updated_message(@book) }
       else
         format.html { render :edit }
       end
@@ -88,7 +88,7 @@ class BooksController < ApplicationController
     @book.remove
     respond_to do |format|
       format.js
-      format.html { redirect_to books_url, notice: 'Book was successfully removed.' }
+      format.html { redirect_to books_url, notice: general_removed_message(@book) }
     end
   end
 

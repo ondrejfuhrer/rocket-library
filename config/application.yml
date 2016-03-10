@@ -1,0 +1,11 @@
+defaults: &defaults
+  application_name: 'Rocket Library'
+
+development:
+  <<: *defaults
+
+production:
+  <<: *defaults
+
+test:
+  <<: *defaults

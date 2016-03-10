@@ -20,4 +20,95 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  navigation:
+    new_rental: 'New Rental'
+    books: Books
+    admin: Admin
+    login: Login
+    logout: 'Log out'
+  book:
+    add: 'Add a book'
+    new:
+      title: 'New Book'
+      manual: 'Manual Entry'
+      isbn_placeholder: 'ISBN, Author, Title, ...'
+    by: by
+    sku: SKU
+    isbn: ISBN
+    rent: Rent
+    return: Return
+    edit: 'Editing Book'
+    confirm:
+      destroy: 'Are you sure you want to remove this book from library?'
+    error:
+      general_ending: 'prohibited this book from being saved'
+      destroy: 'Book cannot be removed. Reason:'
+    return_book:
+      title: 'Return Book'
+      message_label: 'Return Message (optional):'
+      message_placeholder: 'Return message ...'
+    search:
+      placeholder: 'Name, SKU, ...'
+    title: Books
+    message:
+      empty_result: 'No Books found'
+  application:
+    save: Save
+    user: User
+    close: Close
+    add: Add
+    edit: Edit
+    search: Search
+    clear: Clear
+    back: Back
+    all: All
+    sign_up: 'Sign Up'
+    dont_have_account: "Don't have an account?"
+    year:
+      one: '1 year'
+      other: '%{count} years'
+    month:
+      one: '1 month'
+      other: '%{count} months'
+    week:
+      one: '1 week'
+      other: '%{count} weeks'
+    day:
+      one: '1 day'
+      other: '%{count} days'
+    hour:
+      one: '1 hour'
+      other: '%{count} hours'
+    less_than_hour: 'less than hour'
+    message:
+      item_added: 'Item has been successfully added'
+      general_added: '%{class} has been successfully added'
+      general_updated: '%{class} has been successfully updated'
+      general_removed: '%{class} has been successfully removed'
+  rental:
+    new: 
+      title: 'New Rental'
+      submit: 'Rent this book'
+    rented_on: 'Rented on'
+    rented_for: 'Rented for'
+    return_message: 'Return Message'
+    empty_past_result: 'No past rentals found'
+    empty_active_result: 'No active rentals found'
+    empty_book_result: 'No rentals for ths book'
+    empty_active_book_result: 'No active rentals for this book'
+    active: 'Active Rentals'
+    past: 'Past Rentals'
+    message:
+      successfully_rented: 'Book [%{name}] has been successfully rented'
+      destroy: 'Book was successfully returned'
+    error:
+      destroy: 'This book cannot be returned.'
+      create: 'This book cannot be rented.'
+      general_ending: 'prohibited this rental from being saved'
+      blank_sku: 'You must provide an SKU to rent a book'
+      invalid_sku: 'Book with given SKU [%{sku}] was not found.'
+      already_rented: 'Book with SKU [%{sku}] has been already rented'
+  dashboard:
+    title: 'Dashboard'
+
+

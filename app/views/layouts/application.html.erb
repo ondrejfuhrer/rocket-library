@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rocket Library</title>
+  <title><%= Rails.application.config.x[:application_name] %></title>
   <%= csrf_meta_tags %>
 
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
@@ -14,7 +14,7 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand pjax" href="/">
-          Rocket Library
+          <%= Rails.application.config.x[:application_name] %>
         </a>
       </div>
       <div class="collapse navbar-collapse">
@@ -23,19 +23,19 @@
 
             <% if can? :create, Rental %>
               <li>
-                <%= link_to 'New Rental', new_rental_path %>
+                <%= link_to t('navigation.new_rental'), new_rental_path %>
               </li>
             <% end %>
 
             <% if can? :read, Book %>
               <li>
-                <%= link_to 'Books', books_path %>
+                <%= link_to t('navigation.books'), books_path %>
               </li>
             <% end %>
 
             <% if can? :access, :rails_admin %>
               <li>
-                <%= link_to 'Admin', rails_admin_path %>
+                <%= link_to t('navigation.admin'), rails_admin_path %>
               </li>
             <% end %>
 
@@ -44,11 +44,11 @@
             </li>
             <li>
               <%= link_to(destroy_user_session_path, method: :delete) do %>
-                <span class="label label-danger">Log out</span>
+                <span class="label label-danger"><%= t('navigation.logout') %></span>
               <% end %>
             </li>
           <% else %>
-            <li><%= link_to 'Login', new_user_session_path %></li>
+            <li><%= link_to t('navigation.login'), new_user_session_path %></li>
           <% end %>
         </ul>
       </div>
@@ -59,7 +59,7 @@
       <% if msg.is_a? String %>
           <div class="fade in <%= get_flash_message_class name %>">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <%= content_tag :div, msg, :id => "name" %>
+            <%= content_tag :div, msg, id: 'name' %>
           </div>
       <% end %>
   <% end %>

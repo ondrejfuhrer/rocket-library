@@ -9,10 +9,10 @@
         <div class="media-body">
           <div class="">
             <div class="book-item book-name"><h4 class="media-heading"><%= link_to rental.book.name, rental.book %></h4></div>
-            <div class="book-item book-author"><h6>by <%= rental.book.author %></h6></div>
-            <div class="book-item book-renting-period"><h5>Rented for: <%= rental.rental_time %></h5></div>
+            <div class="book-item book-author"><h6><%= t('book.by') %> <%= rental.book.author %></h6></div>
+            <div class="book-item book-renting-period"><h5><%= t('rental.rented_for') %>: <%= rental.rental_time %></h5></div>
             <div class="book-item book-renting-actions">
-              <%= link_to 'Return', '#', data: { toggle: :modal, target: '#delete-modal', title: rental.book.name, author: rental.book.author, form_action: rental_path(rental) }, class: 'btn btn-success' if active %>
+              <%= link_to t('book.return'), '#', data: { toggle: :modal, target: '#delete-modal', title: rental.book.name, author: rental.book.author, form_action: rental_path(rental) }, class: 'btn btn-success' if active %>
             </div>
           </div>
         </div>

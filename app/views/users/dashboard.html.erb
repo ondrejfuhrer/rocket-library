@@ -1,6 +1,6 @@
-<h1>Dashboard</h1>
+<h1><%= t('dashboard.title') %></h1>
 
-<h3>Active rentals</h3>
+<h3><%= t('rental.active') %></h3>
 
 <% if not @user.rentals.active.empty? %>
 
@@ -15,12 +15,12 @@
 <% else %>
   <table class="table table-striped">
     <td>
-      <p class="lead text-center">No Active Rentals</p>
+      <p class="lead text-center"><%= t('rental.empty_active_result') %></p>
     </td>
   </table>
 <% end %>
 
-<h3>Past rentals</h3>
+<h3><%= t('rental.past') %></h3>
 <% if not @user.rentals.returned.empty? %>
 
   <% @user.rentals.returned.each_slice(3) do |rentals| %>
@@ -33,7 +33,7 @@
 <% else %>
   <table class="table table-striped">
     <td>
-      <p class="lead text-center">No Past Rentals</p>
+      <p class="lead text-center"><%= t('rental.empty_past_result') %></p>
     </td>
   </table>
 <% end %>

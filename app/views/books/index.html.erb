@@ -9,19 +9,19 @@
   </table>
 </div>
 <div class="row">
-  <div class="col-sm-7"><h1>Books</h1></div>
+  <div class="col-sm-7"><h1><%= t('book.title') %></h1></div>
   <div class="col-sm-5">
     <%# The path in here can differ (we can have search by the alphabet - different route) #%>
     <%= search_form_for @search, url: request.env['PATH_INFO'] do |s| %>
       <div class="form-group header-margin">
         <div class="col-sm-8">
-          <%= s.text_field :sku_or_name_cont, placeholder: 'Name, SKU, ...', class: 'form-control' %>
+          <%= s.text_field :sku_or_name_cont, placeholder: t('book.search.placeholder'), class: 'form-control' %>
         </div>
         <div class="col-sm-2">
-          <%= s.submit 'Search', class: 'btn btn-primary' %>
+          <%= s.submit t('application.search'), class: 'btn btn-primary' %>
         </div>
         <div class="col-sm-2">
-          <%= link_to 'Clear', books_path, class: 'btn btn-default' %>
+          <%= link_to t('application.clear'), books_path, class: 'btn btn-default' %>
         </div>
       </div>
     <% end %>
@@ -30,7 +30,7 @@
 <% if @books.empty? %>
   <table class="table table-striped">
     <tr>
-      <td><p class="lead text-center">No Books found</p></td>
+      <td><p class="lead text-center"><%= t('book.message.empty_result') %></p></td>
     </tr>
   </table>
 <% else %>
@@ -45,6 +45,6 @@
 <% end %>
 
 <% if can? :create, Book %>
-  <%= link_to 'Add a book', new_book_path, :class => 'btn btn-success' %>
+  <%= link_to t('book.add'), new_book_path, :class => 'btn btn-success' %>
 <% end %>
 <%= render partial: 'books/return_modal', locals: { remote: true } %>

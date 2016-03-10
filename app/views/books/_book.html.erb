@@ -8,21 +8,21 @@
         <div class="media-body">
           <div class="">
             <div class="book-item book-name"><h4 class="media-heading"><%= link_to book.name, book %></h4></div>
-            <div class="book-item book-author"><h6>by <%= book.author %></h6></div>
-            <div class="book-item"><p>SKU: <%= book.sku %></p></div>
+            <div class="book-item book-author"><h6><%= t('book.by') %> <%= book.author %></h6></div>
+            <div class="book-item"><p><%= t('book.sku') %>: <%= book.sku %></p></div>
             <% if book.rented? %>
               <div class="book-item"><p><span class="<%= get_bootstrap_class_for_state book.state %>"><%= book.state %></span></p></div>
             <% end %>
             <div class="book-item book-renting-actions">
-              <%= link_to('Rent', rentals_path(sku: book.sku, format: :js), method: :post, remote: true, class: 'btn btn-success') if can? :create, Rental and book.active? %>
+              <%= link_to(t('book.rent'), rentals_path(sku: book.sku, format: :js), method: :post, remote: true, class: 'btn btn-success') if can? :create, Rental and book.active? %>
               <% if book.rented? %>
                 <% rental = book.rentals.active.first %>
                 <% if can? :destroy, rental %>
-                  <%= link_to 'Return', '#', class: 'btn btn-info', data: { toggle: :modal, target: '#delete-modal', title: book.name, author: book.author, form_action: rental_path(rental) } %>
+                  <%= link_to t('book.return'), '#', class: 'btn btn-info', data: { toggle: :modal, target: '#delete-modal', title: book.name, author: book.author, form_action: rental_path(rental) } %>
                 <% end %>
               <% end %>
-              <%= link_to('Edit', edit_book_path(book), class: 'btn btn-primary') if can? :edit, book %>
-              <%= link_to('X', book_path(book), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to remove this book from library?' }) if can? :destroy, book %>
+              <%= link_to(t('application.edit'), edit_book_path(book), class: 'btn btn-primary') if can? :edit, book %>
+              <%= link_to('X', book_path(book), method: :delete, class: 'btn btn-danger', data: { confirm: t('book.confirm.destroy') }) if can? :destroy, book %>
             </div>
           </div>
         </div>

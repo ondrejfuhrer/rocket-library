@@ -1,7 +1,7 @@
 <%= bootstrap_form_tag url: rentals_path do |f| %>
   <% if @rental.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@rental.errors.count, 'error') %> prohibited this rental from being saved:</h2>
+      <h2><%= pluralize(@rental.errors.count, 'error') %> <%= t('rental.error.general_ending') %>:</h2>
 
       <ul>
         <% @rental.errors.full_messages.each do |message| %>
@@ -12,10 +12,10 @@
   <% end %>
   <div class="row">
     <div class="col-xs-5 col-centered">
-      <h1>New Rental</h1>
+      <h1><%= t('rental.new.title') %></h1>
       <%= f.text_field :sku %>
       <fieldset class="actions">
-        <%= f.submit 'Rent this book', :class => 'btn btn-primary btn-block' %>
+        <%= f.submit t('rental.new.submit'), :class => 'btn btn-primary btn-block' %>
       </fieldset>
     </div>
   </div>

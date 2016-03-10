@@ -4,11 +4,11 @@
   <table class="table table-striped">
     <thead>
     <tr>
-      <th>User</th>
-      <th>Rented on</th>
-      <th>Rented for</th>
+      <th><%= t('application.user') %></th>
+      <th><%= t('rental.rented_on') %></th>
+      <th><%= t('rental.rented_for') %></th>
       <% unless active %>
-        <th>Return Message</th>
+        <th><%= t('rental.return_message') %></th>
       <% end %>
     </tr>
     </thead>
@@ -30,7 +30,7 @@
     <td>
       <p class="lead text-center">
         <% unless defined?(empty_result_message) %>
-          <% empty_result_message = active ? 'No active rentals for this book' : 'No rentals for this book' %>
+          <% empty_result_message = active ? t('rental.empty_active_book_result') : t('rental.empty_book_result') %>
         <% end %>
         <%= empty_result_message %>
       </p>

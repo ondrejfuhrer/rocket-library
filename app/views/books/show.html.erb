@@ -1,5 +1,5 @@
 <ol class="breadcrumb" style="margin-bottom: 5px;">
-  <li class="active"><%= link_to 'Back', books_path %></li>
+  <li class="active"><%= link_to t('application.back'), books_path %></li>
 </ol>
 
 <div class="col-sm-12" id="book-<%= @book.id %>">
@@ -12,9 +12,9 @@
         <div class="media-body">
           <div class="">
             <div class="book-item"><h4 class="media-heading"><%= link_to @book.name, @book %></h4></div>
-            <div class="book-item"><h6>by <%= @book.author %></h6></div>
-            <div class="book-item">ISBN: <%= @book.isbn %></div>
-            <div class="book-item">SKU: <%= @book.sku %></div>
+            <div class="book-item"><h6><%= t('book.by') %> <%= @book.author %></h6></div>
+            <div class="book-item"><%= t('book.isbn') %>: <%= @book.isbn %></div>
+            <div class="book-item"><%= t('book.sku') %>: <%= @book.sku %></div>
           </div>
         </div>
       </div>
@@ -22,8 +22,8 @@
   </div>
 </div>
 
-<h3>Active Rental</h3>
+<h3><%= t('rental.active') %></h3>
 <%= render partial: 'rental_table', locals: { active: true, rentals: @book.rentals.active } %>
 
-<h3>Past rentals</h3>
+<h3><%= t('rental.past') %></h3>
 <%= render partial: 'rental_table', locals: { rentals: @book.rentals.returned } %>

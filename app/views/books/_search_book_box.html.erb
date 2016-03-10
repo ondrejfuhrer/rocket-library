@@ -1,18 +1,18 @@
 <div class="col-xs-12 col-sm-4 col-md-3">
   <div class="thumbnail search-row" id="search-row-<%= book.isbn %>">
-      <img src="<%= book.cover.big %>"/>
-      <div class="caption">
-        <h4><%= book.name %></h4>
-        <p>by <%= book.author %></p>
-        <%= bootstrap_form_for book, remote: true do |f| %>
-          <%= f.hidden_field :cover %>
-          <%= f.hidden_field :name %>
-          <%= f.hidden_field :author %>
-          <%= f.hidden_field :isbn %>
-          <fieldset class="actions">
-            <%= f.submit 'Add', class: 'btn btn-primary', name: 'add_from_search' %>
-          </fieldset>
-        <% end %>
-      </div>
+    <img src="<%= book.cover.big %>"/>
+    <div class="caption">
+      <h4><%= book.name %></h4>
+      <p>by <%= book.author %></p>
+      <%= bootstrap_form_for book, remote: true do |f| %>
+        <%= f.hidden_field :cover %>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :author %>
+        <%= f.hidden_field :isbn %>
+        <fieldset class="actions">
+          <%= f.submit t('application.add'), class: 'btn btn-primary', name: 'add_from_search' %>
+        </fieldset>
+      <% end %>
+    </div>
   </div>
 </div>

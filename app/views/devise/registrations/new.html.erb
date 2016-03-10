@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2><%= t('application.sign_up') %></h2>
 
 <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -8,10 +8,10 @@
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %>
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: 'off' %>
 
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: 'off' %>
 
-    <%= f.submit "Sign up", :class=> 'btn btn-success' %>
-    <%= render "devise/shared/links" %>
+    <%= f.submit t('application.sign_up'), :class=> 'btn btn-success' %>
+    <%= render 'devise/shared/links' %>
 <% end %>

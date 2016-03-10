@@ -1,13 +1,13 @@
 <ol class="breadcrumb" style="margin-bottom: 5px;">
-  <li class="active"><%= link_to 'Back', books_path %></li>
+  <li class="active"><%= link_to t('application.back'), books_path %></li>
 </ol>
-<h1>New Book</h1>
+<h1><%= t('book.new.title') %></h1>
 
 <div>
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab">Search</a></li>
-    <li role="presentation"><a href="#manual" aria-controls="manual" role="tab" data-toggle="tab">Manual Entry</a></li>
+    <li role="presentation" class="active"><a href="#search" aria-controls="search" role="tab" data-toggle="tab"><%= t('application.search') %></a></li>
+    <li role="presentation"><a href="#manual" aria-controls="manual" role="tab" data-toggle="tab"><%= t('book.new.manual') %></a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -15,8 +15,8 @@
     <div role="tabpanel" class="tab-pane active" id="search">
 
       <%= bootstrap_form_tag url: search_books_path, remote: true do |f| %>
-        <%= f.text_field :isbn, :placeholder => 'ISBN, Author, Title...', label: 'Search' %>
-        <%= f.submit 'Search', :class => 'btn btn-primary', :id => 'js-search' %>
+        <%= f.text_field :isbn, placeholder: t('book.new.isbn_placeholder'), label: t('application.search') %>
+        <%= f.submit t('application.search'), class: 'btn btn-primary', id: 'js-search' %>
       <% end %>
       <br/>
       <div id="search-results">
