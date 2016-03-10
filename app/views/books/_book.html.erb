@@ -10,6 +10,9 @@
             <div class="book-item book-name"><h4 class="media-heading"><%= link_to book.name, book %></h4></div>
             <div class="book-item book-author"><h6>by <%= book.author %></h6></div>
             <div class="book-item"><p>SKU: <%= book.sku %></p></div>
+            <% if book.rented? %>
+              <div class="book-item"><p><span class="<%= get_bootstrap_class_for_state book.state %>"><%= book.state %></span></p></div>
+            <% end %>
             <div class="book-item book-renting-actions">
               <%= link_to('Rent', rentals_path(sku: book.sku, format: :js), method: :post, remote: true, class: 'btn btn-success') if can? :create, Rental and book.active? %>
               <% if book.rented? %>
