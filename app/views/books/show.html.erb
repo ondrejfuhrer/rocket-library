@@ -2,18 +2,23 @@
   <li class="active"><%= link_to 'Back', books_path %></li>
 </ol>
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <img src="<%= @book.cover.normal %>" />
-    <ul class="list-unstyled">
-      <li>Name:<%= @book.name %></li>
-      <li>Author:<%= @book.author %></li>
-      <li>SKU:<%= @book.sku %></li>
-      <li>ISBN:<%= @book.isbn %></li>
-    </ul>
-    <% if can? :manage, @book %>
-      <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-warning' %>
-    <% end %>
+<div class="col-sm-12" id="book-<%= @book.id %>">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="media">
+        <div class="media-left">
+          <%= link_to image_tag(@book.cover.big, class: 'media-object'), @book %>
+        </div>
+        <div class="media-body">
+          <div class="">
+            <div class="book-item"><h4 class="media-heading"><%= link_to @book.name, @book %></h4></div>
+            <div class="book-item"><h6>by <%= @book.author %></h6></div>
+            <div class="book-item">ISBN: <%= @book.isbn %></div>
+            <div class="book-item">SKU: <%= @book.sku %></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 

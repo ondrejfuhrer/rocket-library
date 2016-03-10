@@ -31,13 +31,25 @@ class Rental < ActiveRecord::Base
     data = TimeDifference.between(Time.zone.now, self.created_at).in_general
 
     result = []
-    result << "#{data[:months]} months" if data[:months] > 0
-    result << "#{data[:days]} days" if data[:days] > 0
-    result << "#{data[:hours]} hours" if data[:hours] > 0
+    result << rental_time_item('year', data[:years]) if data[:years] > 0
+    result << rental_time_item('month', data[:months]) if data[:months] > 0
+    result << rental_time_item('week', data[:weeks]) if data[:weeks] > 0
+    result << rental_time_item('day', data[:days]) if data[:days] > 0
+    result << rental_time_item('hour', data[:hours]) if data[:hours] > 0
 
     result << 'less than hour' if result.empty?
 
     result.join(' ')
+  end
+
+  private
+
+  def rental_time_item(type, value)
+    if 1 < value
+      type = "#{type}s"
+    end
+
+    "#{value} #{type}"
   end
 
 end

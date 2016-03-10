@@ -15,45 +15,36 @@
     <%# The path in here can differ (we can have search by the alphabet - different route) #%>
     <%= search_form_for @search, url: request.env['PATH_INFO'] do |s| %>
       <div class="form-group header-margin">
-        <div class="row">
-          <div class="col-sm-8">
-            <%= s.text_field :sku_or_name_cont, placeholder: 'Name, SKU, ...', class: 'form-control' %>
-          </div>
-          <div class="col-sm-2">
-            <%= s.submit 'Search', class: 'btn btn-primary' %>
-          </div>
-          <div class="col-sm-2">
-            <%= link_to 'Clear', books_path, class: 'btn btn-default' %>
-          </div>
+        <div class="col-sm-8">
+          <%= s.text_field :sku_or_name_cont, placeholder: 'Name, SKU, ...', class: 'form-control' %>
+        </div>
+        <div class="col-sm-2">
+          <%= s.submit 'Search', class: 'btn btn-primary' %>
+        </div>
+        <div class="col-sm-2">
+          <%= link_to 'Clear', books_path, class: 'btn btn-default' %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-<table class="table table-striped">
-  <% if @books.empty? %>
+<% if @books.empty? %>
+  <table class="table table-striped">
     <tr>
       <td><p class="lead text-center">No Books found</p></td>
     </tr>
-  <% else %>
-    <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>Author</th>
-      <th>ISBN</th>
-      <th>SKU</th>
-      <th colspan="4">State</th>
-    </tr>
-    </thead>
-    <tbody>
-
-    <% @books.each do |book| %>
-      <%= render partial: 'books_row', locals: { book: book } %>
-    <% end %>
-    </tbody>
+  </table>
+<% else %>
+  <% @books.each_slice(3) do |books| %>
+    <div class="row">
+      <% books.each do |book| %>
+        <%= render partial: 'book', locals: { book: book } %>
+      <% end %>
+    </div>
   <% end %>
-</table>
+  </tbody>
+<% end %>
+
 <% if can? :create, Book %>
   <%= link_to 'Add a book', new_book_path, :class => 'btn btn-success' %>
 <% end %>
