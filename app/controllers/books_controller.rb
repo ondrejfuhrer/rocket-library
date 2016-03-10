@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
   def index
     connection = ActiveRecord::Base.connection
-    available_letters = connection.execute('SELECT DISTINCT SUBSTR(LOWER(name), 1, 1) as letter FROM books').map { |l| l[0] }
+    available_letters = connection.execute('SELECT DISTINCT SUBSTR(LOWER(name), 1, 1) as letter FROM books').map { |l| l['letter'] }
     if params[:letter].present?
       name_search = { name_start: params[:letter] }
       params[:q] = params[:q].present? ? params[:q].merge(name_search) : name_search
