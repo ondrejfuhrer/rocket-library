@@ -6,11 +6,13 @@ rvm:
   - 2.3.0
 
 env:
-  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage ARCHFLAGS="-arch x86_64"
+  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
 
 before_install:
   - sudo apt-get -y update
   - sudo apt-get -y install libpq-dev
+  - sudo apt-get -y install libgmp-dev
+  - gem install bundler --pre
 
 # ensure the test output and coverage dirs are created
 before_script:

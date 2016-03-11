@@ -61,8 +61,7 @@ gem 'carrierwave'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-# Access an IRB console on exception pages or by using <%= console %> in views
-gem 'web-console', '~> 2.0', group: :development
+
 
 gem 'time_difference'
 
@@ -76,11 +75,6 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-  # Pretty print for console, usage: ap User.first
-  gem 'awesome_print', require: 'ap'
-
-  gem 'better_errors'
-
   gem 'bullet'
   gem 'quiet_assets'
 
@@ -89,5 +83,12 @@ group :development, :test do
   gem 'capybara'
   gem 'rspec-rails'
   gem 'guard-rspec'
+  gem 'ffaker'
 
 end
+
+# Access an IRB console on exception pages or by using <%= console %> in views
+gem 'web-console', '~> 2.0', group: :development
+gem 'better_errors', group: :development
+# Pretty print for console, usage: ap User.first
+gem 'awesome_print', require: 'ap', group: :development
