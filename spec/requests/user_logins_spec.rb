@@ -1,21 +1,23 @@
 require 'rails_helper'
 
-RSpec.describe 'UserLogins', type: :request do
+describe 'User Logins', type: :feature do
+
   it 'should get login page' do
     visit root_path
-    page.should have_field('Email')
-    page.should have_field('Password')
+    expect(page).to have_field('Email')
+    expect(page).to have_field('Password')
   end
 
   it 'user can login with credentials' do
-    user = create(:user)
+    user = FactoryGirl.create :user
+
     visit root_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_button 'Log in'
-  end
+    click_button 'Login'
 
-  it 'try something' do
-    visit books_path
+    expect(page.status_code).to eq 200
+    expect(page.current_path).to eq '/'
+    expect(page).to have_content 'Dashboard'
   end
 end
