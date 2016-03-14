@@ -1,0 +1,5 @@
+<% if @watch_list.errors.any? %>
+alert('<%= t('rental.error.create') %>');
+<% else %>
+$('#book-<%= @watch_list.rental.book.id %>').replaceWith("<%= j render(partial: 'books/book', locals: {book: @watch_list.rental.book}).html_safe %>");
+<% end %>

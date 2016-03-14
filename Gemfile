@@ -10,8 +10,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -51,20 +49,11 @@ gem 'googlebooks'
 # Images
 gem 'mini_magick'
 gem 'carrierwave'
-# gem 'jquery-fileupload-rails'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-
+# Time difference for difference calculations
 gem 'time_difference'
 
+# Search engine
 gem 'ransack'
 
 group :development, :test do
@@ -84,11 +73,20 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'ffaker'
-
+  gem 'simplecov'
+  gem 'simplecov-csv'
+  gem 'simplecov-html'
+  gem 'minitest-reporters'
+  # JUnit formatter
+  gem 'yarjuf'
 end
 
 # Access an IRB console on exception pages or by using <%= console %> in views
 gem 'web-console', '~> 2.0', group: :development
 gem 'better_errors', group: :development
+
+# Development email sending
+gem 'letter_opener', :group => :development
+
 # Pretty print for console, usage: ap User.first
 gem 'awesome_print', require: 'ap', group: :development

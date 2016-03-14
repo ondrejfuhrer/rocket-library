@@ -2,13 +2,38 @@
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
-abort("The Rails environment is running in production mode!") if Rails.env.production?
+abort('The Rails environment is running in production mode!') if Rails.env.production?
 require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rspec'
 require 'ffaker'
 require 'cancan/matchers'
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'minitest/reporters'
+require 'simplecov'
+require 'yarjuf'
+
+ENV['COVERAGE_REPORTS'] ||= 'tmp/coverage'
+ENV['CI_REPORTS'] ||= 'tmp/testresults'
+ENV['CI_COVERAGE_FORMATTER'] ||= 'html'
+
+SimpleCov.coverage_dir(ENV['COVERAGE_REPORTS'])
+
+case ENV['CI_COVERAGE_FORMATTER']
+  when 'csv'
+    require 'simplecov-csv'
+    SimpleCov.formatter = SimpleCov::Formatter::CSVFormatter
+  else
+    require 'simplecov-html'
+    SimpleCov.formatter = SimpleCov::Formatter::HTMLFormatter
+end
+
+SimpleCov.start
+
+MiniTest::Reporters.use! [
+  MiniTest::Reporters::DefaultReporter.new,
+  MiniTest::Reporters::JUnitReporter.new(ENV['CI_REPORTS'])
+]
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are

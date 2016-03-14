@@ -6,19 +6,21 @@ rvm:
   - 2.3.0
 
 env:
-  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
+  - CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage CI_COVERAGE_FORMATTER=csv
 
 before_install:
   - sudo apt-get -y update
   - sudo apt-get -y install libpq-dev
   - sudo apt-get -y install libgmp-dev
   - gem install bundler --pre
+  - bundle update rake
 
 # ensure the test output and coverage dirs are created
 before_script:
   - mkdir -p shippable/testresults
+  - mkdir -p shippable/codecoverage
   - RAILS_ENV=test rake db:migrate
 
 # write the rspec tests to the output dir
 script:
-  - rspec -o shippable/testresults/results.xml
+  - rspec -f JUnit -o shippable/testresults/results.xml

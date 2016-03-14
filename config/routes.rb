@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     get '/:letter', on: :collection, as: :alphabetic_filter, to: 'books#index', constraints: { letter: /[a-z]/ }
   end
 
-  resources :rentals, only: [:destroy, :create, :index, :new]
+  resources :rentals, only: [:destroy, :create, :index, :new] do
+    resources :watch_lists, only: [:create]
+  end
 
 end
