@@ -17,10 +17,19 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 require 'capybara/rspec'
+require 'capybara/webkit'
 require 'simplecov'
 require 'yarjuf'
+require 'webmock/rspec'
+require 'warden/test/helpers'
+require 'support/wait_for_ajax'
 
-SimpleCov.start 'rails'
+if ENV['RAILS_ENV'] == 'test'
+  WebMock.disable_net_connect!(allow_localhost: true)
+end
+
+DEFAULT_HOST = 'localhost'
+DEFAULT_PORT = 7171
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -48,8 +57,26 @@ RSpec.configure do |config|
 
   config.include Capybara::DSL
 
-# The settings below are suggested to provide a good initial experience
-# with RSpec, but feel free to customize to your heart's content.
+  Capybara.javascript_driver = :webkit
+
+  Capybara.default_host = "http://#{DEFAULT_HOST}"
+  Capybara.server_port = DEFAULT_PORT
+  Capybara.app_host = "http://#{DEFAULT_HOST}:#{Capybara.server_port}"
+  Capybara.default_max_wait_time = 3
+
+  config.include Warden::Test::Helpers
+  config.before :each do
+
+  end
+
+  config.after :each do
+    Warden.test_reset!
+  end
+
+  config.include WaitForAjax, type: :feature
+
+  # The settings below are suggested to provide a good initial experience
+  # with RSpec, but feel free to customize to your heart's content.
 =begin
   # These two settings work together to allow you to limit a spec run
   # to individual examples or groups you care about by tagging them with
@@ -97,4 +124,9 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+end
+
+Capybara::Webkit.configure do |config|
+  config.allow_url(DEFAULT_HOST)
+  config.block_unknown_urls
 end

@@ -1,0 +1,851 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 619,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "f1jXCQAAQBAJ",
+      "etag": "OhFUz5cuNRg",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/f1jXCQAAQBAJ",
+      "volumeInfo": {
+        "title": "Java and XML",
+        "authors": [
+          "Brett McLaughlin",
+          "Justin Edelson"
+        ],
+        "publisher": "\"O'Reilly Media, Inc.\"",
+        "publishedDate": "2006-12-08",
+        "description": "Java and XML, 3rd Edition, shows you how to cut through all the hype about XML and put it to work. It teaches you how to use the APIs, tools, and tricks of XML to build real-world applications. The result is a new approach to managing information that touches everything from configuration files to web sites. After two chapters on XML basics, including XPath, XSL, DTDs, and XML Schema, the rest of the book focuses on using XML from your Java applications. This third edition of Java and XML covers all major Java XML processing libraries, including full coverage of the SAX, DOM, StAX, JDOM, and dom4j APIs as well as the latest version of the Java API for XML Processing (JAXP) and Java Architecture for XML Binding (JAXB). The chapters on web technology have been entirely rewritten to focus on the today's most relevant topics: syndicating content with RSS and creating Web 2.0 applications. You'll learn how to create, read, and modify RSS feeds for syndicated content and use XML to power the next generation of websites with Ajax and Adobe Flash. Topics include: The basics of XML, including DTDs, namespaces, XML Schema, XPath, and Transformations The SAX API, including all handlers, filters, and writers The DOM API, including DOM Level 2, Level 3, and the DOM HTML module The JDOM API, including the core and a look at XPath support The StAX API, including StAX factories, producing documents and XMLPull Data Binding with JAXB, using the new JAXB 2.0 annotations Web syndication and podcasting with RSS XML on the Presentation Layer, paying attention to Ajax and Flash applications If you are developing with Java and need to use XML, or think that you will be in the future; if you're involved in the new peer-to-peer movement, messaging, or web services; or if you're developing software for electronic commerce, Java and XML will be an indispensable companion.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780596515416"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0596515413"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 552,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "averageRating": 4.0,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=f1jXCQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=f1jXCQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=f1jXCQAAQBAJ&pg=PA134&dq=Search+phrase&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=f1jXCQAAQBAJ&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Java_and_XML.html?hl=&id=f1jXCQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=f1jXCQAAQBAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "\u003cb\u003eSearch phrase\u003c/b\u003e found: &#39;Breaking the back button:&#39; \u003cb\u003eSearch phrase\u003c/b\u003e found: &#39;\u003cbr\u003e\nChanging state with links (GET requests):&#39; \u003cb\u003eSearch phrase\u003c/b\u003e found: &#39;Blinking and \u003cbr\u003e\nchanging parts of the page unexpectedly:&#39; \u003cb\u003eSearch phrase\u003c/b\u003e found: &#39;Not using links I \u003cbr\u003e\ncan pass&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "AfpOAQAAIAAJ",
+      "etag": "IqL5FwNCEvo",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/AfpOAQAAIAAJ",
+      "volumeInfo": {
+        "title": "Search aids manual for natural language term list, rotated title phrase list, headings list",
+        "authors": [
+          "American Chemical Society. Chemical Abstracts Service"
+        ],
+        "publishedDate": "1979",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "STANFORD:36105029283665"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 26,
+        "printType": "BOOK",
+        "categories": [
+          "Chemistry"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=AfpOAQAAIAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=AfpOAQAAIAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=AfpOAQAAIAAJ&q=Search+phrase&dq=Search+phrase&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=AfpOAQAAIAAJ&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Search_aids_manual_for_natural_language.html?hl=&id=AfpOAQAAIAAJ"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=AfpOAQAAIAAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "xmFLSuDcN2wC",
+      "etag": "LpI79Y5InoQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/xmFLSuDcN2wC",
+      "volumeInfo": {
+        "title": "Search Engine Optimization For Dummies",
+        "authors": [
+          "Peter Kent"
+        ],
+        "publisher": "John Wiley & Sons",
+        "publishedDate": "2011-02-02",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781118052389"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1118052382"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 432,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "averageRating": 4.0,
+        "ratingsCount": 20,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.1.1.0.preview.3",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=xmFLSuDcN2wC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=xmFLSuDcN2wC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=xmFLSuDcN2wC&pg=PA419&dq=Search+phrase&hl=&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=xmFLSuDcN2wC&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Search_Engine_Optimization_For_Dummies.html?hl=&id=xmFLSuDcN2wC"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.de/books/download/Search_Engine_Optimization_For_Dummies-sample-epub.acsm?id=xmFLSuDcN2wC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.de/books/download/Search_Engine_Optimization_For_Dummies-sample-pdf.acsm?id=xmFLSuDcN2wC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=xmFLSuDcN2wC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "You can tell Google to \u003cb\u003esearch\u003c/b\u003e for a \u003cb\u003ephrase\u003c/b\u003e but to omit pages that contain \u003cbr\u003e\nparticular words. For instance, you may want to find all the pages with the \u003cb\u003ephrase\u003c/b\u003e \u003cbr\u003e\nrodent racing but omit the pages containing the word chevrolet. (Omitting \u003cbr\u003e\nChevrolet in&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "4PY-dxY3AEAC",
+      "etag": "ETZ1hoqbVTc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/4PY-dxY3AEAC",
+      "volumeInfo": {
+        "title": "Pro Full-Text Search in SQL Server 2008",
+        "authors": [
+          "Hilary Cotter",
+          "Michael Coles"
+        ],
+        "publisher": "Apress",
+        "publishedDate": "2009-01-29",
+        "description": "Businesses today want actionable insights into their data—they want their data to reveal itself to them in a natural and user–friendly form. What could be more natural than human language? Natural–language search is at the center of a storm of ever–increasing web–driven demand for human–computer communication and information access. SQL Server 2008 provides the tools to take advantage of the features of its built–in enterprise–level natural–language search engine in the form of integrated full–text search (iFTS). iFTS uses text–aware relational queries to provide your users with fast access to content. Whether you want to set up an enterprise–wide Internet or intranet search engine or create less ambitious natural–language search applications, this book will teach you how to get the most out of SQL Server 2008 iFTS: Introducing powerful iFTS features in SQL Server, such as the FREETEXT and CONTAINS predicates, custom thesauruses, and stop lists Showing you how to optimize full–text query performance through features like full–text indexes and iFilters Providing examples that help you understand and apply the power of iFTS in your daily projects",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781430215950"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "143021595X"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 312,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.2.1.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=4PY-dxY3AEAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=4PY-dxY3AEAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=4PY-dxY3AEAC&pg=PA59&dq=Search+phrase&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=4PY-dxY3AEAC&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Pro_Full_Text_Search_in_SQL_Server_2008.html?hl=&id=4PY-dxY3AEAC"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 44.02,
+          "currencyCode": "EUR"
+        },
+        "retailPrice": {
+          "amount": 30.81,
+          "currencyCode": "EUR"
+        },
+        "buyLink": "http://books.google.de/books?id=4PY-dxY3AEAC&dq=Search+phrase&hl=&buy=&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 4.402E7,
+              "currencyCode": "EUR"
+            },
+            "retailPrice": {
+              "amountInMicros": 3.081E7,
+              "currencyCode": "EUR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.de/books/download/Pro_Full_Text_Search_in_SQL_Server_2008-sample-pdf.acsm?id=4PY-dxY3AEAC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=4PY-dxY3AEAC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "You can \u003cb\u003esearch\u003c/b\u003e for \u003cb\u003ephrases\u003c/b\u003e as opposed to a single word. To specify a \u003cb\u003ephrase\u003c/b\u003e in a \u003cbr\u003e\nCONTAINS \u003cb\u003esearch\u003c/b\u003e, you have to wrap the entire \u003cb\u003ephrase\u003c/b\u003e in double quotes. Listing \u003cbr\u003e\n3-11 is a simple CONTAINS \u003cb\u003esearch\u003c/b\u003e for the \u003cb\u003ephrase\u003c/b\u003e “cats and dogs”. The result is&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "LbJRPwAACAAJ",
+      "etag": "GpBE6AgfwqE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/LbJRPwAACAAJ",
+      "volumeInfo": {
+        "title": "Die Bibliothek von Babel",
+        "subtitle": "eine Erzählung",
+        "authors": [
+          "Jorge Luis Borges"
+        ],
+        "publishedDate": "2001",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "3882437782"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9783882437782"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 96,
+        "printType": "BOOK",
+        "averageRating": 4.0,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=LbJRPwAACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=LbJRPwAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "de",
+        "previewLink": "http://books.google.de/books?id=LbJRPwAACAAJ&dq=Search+phrase&hl=&cd=5&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=LbJRPwAACAAJ&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Die_Bibliothek_von_Babel.html?hl=&id=LbJRPwAACAAJ"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=LbJRPwAACAAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "ceyDOmnHWakC",
+      "etag": "Ez0sF5yN1Co",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/ceyDOmnHWakC",
+      "volumeInfo": {
+        "title": "Marketing Through Search Optimization",
+        "authors": [
+          "Alex Michael",
+          "Ben Salter"
+        ],
+        "publisher": "Routledge",
+        "publishedDate": "2012-06-25",
+        "description": "Search engine placement has become a key task for those engaged in website marketing because: * Good positioning in search engines/directories dramatically increases visitor traffic. * Optimizing search engine ranking is the most important and cost effective way of marketing a website. * Customers use search engines more than any other method to locate websites. Alex Michael and Ben Salter guide readers through proven techniques for achieving and measuring success, along with a review of the most important search engines and directories. Throughout the book there are numerous real case studies and tips to help the marketer build a world class web presence.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781136379383"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "113637938X"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 264,
+        "printType": "BOOK",
+        "categories": [
+          "Business & Economics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.5.3.0.preview.3",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=ceyDOmnHWakC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=ceyDOmnHWakC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=ceyDOmnHWakC&pg=PA132&dq=Search+phrase&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=ceyDOmnHWakC&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Marketing_Through_Search_Optimization.html?hl=&id=ceyDOmnHWakC"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 36.38,
+          "currencyCode": "EUR"
+        },
+        "retailPrice": {
+          "amount": 25.54,
+          "currencyCode": "EUR"
+        },
+        "buyLink": "http://books.google.de/books?id=ceyDOmnHWakC&dq=Search+phrase&hl=&buy=&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 3.638E7,
+              "currencyCode": "EUR"
+            },
+            "retailPrice": {
+              "amountInMicros": 2.554E7,
+              "currencyCode": "EUR"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.de/books/download/Marketing_Through_Search_Optimization-sample-epub.acsm?id=ceyDOmnHWakC&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.de/books/download/Marketing_Through_Search_Optimization-sample-pdf.acsm?id=ceyDOmnHWakC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=ceyDOmnHWakC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "The checker tries to guess what words you&#39;re trying to feature in your META tag \u003cbr\u003e\nby looking for \u003cb\u003ephrases\u003c/b\u003e between commas in the META keywords tag. \u003cbr\u003e\nUnfortunately, commas are not required and can be detrimental to \u003cb\u003esearch\u003c/b\u003e engine \u003cbr\u003e\nranking."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "kQQ4cgAACAAJ",
+      "etag": "lN+qdK10lqc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/kQQ4cgAACAAJ",
+      "volumeInfo": {
+        "title": "Searching the Asrs Database Using Quorum Keyword Search, Phrase Search, Phrase Generation, and Phrase Discov... NASA",
+        "publishedDate": "1998",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "OCLC:640923498"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=kQQ4cgAACAAJ&dq=Search+phrase&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=kQQ4cgAACAAJ&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Searching_the_Asrs_Database_Using_Quorum.html?hl=&id=kQQ4cgAACAAJ"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=kQQ4cgAACAAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "aVHTCQAAQBAJ",
+      "etag": "GE9HK8HEB6w",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/aVHTCQAAQBAJ",
+      "volumeInfo": {
+        "title": "Internet Research Illustrated",
+        "authors": [
+          "Donald I. Barker",
+          "Melissa Barker"
+        ],
+        "publisher": "Cengage Learning",
+        "publishedDate": "2013-10-31",
+        "description": "Equip your students with Internet Research knowledge using this practical user-friendly book from the Illustrated Series. New edition features vastly expanded coverage of social media search, with an entire unit now dedicated to the topic. Explores how to use social media meta search engines to find information from multiple social media sites simultaneously. Additional emphasis on evaluating the value, veracity, and reliability of content found online. Continued attention to Boolean search and the use of other advanced search operators to maximize the efficacy of Internet research. Streamlined coverage of specialty searches and the use of subject directories, using state-of-the-art search techniques. Important Notice: Media content referenced within the product description or the product text may not be available in the ebook version.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781285854120"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1285854128"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 128,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.0.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=aVHTCQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=aVHTCQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=aVHTCQAAQBAJ&pg=PP23&dq=Search+phrase&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=aVHTCQAAQBAJ&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Internet_Research_Illustrated.html?hl=&id=aVHTCQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=aVHTCQAAQBAJ&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Learning Outcomes•Conducta phrasesearch • Compare results When you \u003cbr\u003e\nconstruct a \u003cb\u003esearch\u003c/b\u003e with more than one keyword, you often need two or more \u003cbr\u003e\nwords to be in a \u003cb\u003ephrase\u003c/b\u003e rather than appearing independently on the results \u003cbr\u003e\npages."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "TomPsv_WziwC",
+      "etag": "tDn96t2me7E",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/TomPsv_WziwC",
+      "volumeInfo": {
+        "title": "Pay-per-click Search Engine Marketing Handbook",
+        "subtitle": "Low Cost Strategies to Attracting New Customers Using Google, Yahoo & Other Search Engines",
+        "authors": [
+          "Boris Mordkovich",
+          "Eugene Mordkovich"
+        ],
+        "publisher": "Lulu.com",
+        "publishedDate": "2005",
+        "description": "You've got products. You've got a website. You're ready to do business online. Now, how do you attract new customers? You'll find the answers in this book. In it, search engine advertising pioneers, Boris and Eugene Mordkovich, share their knowledge from the most basic information explaining how Pay-Per-Click works to why it is so extraordinarily effective, as well as offer detailed information on how to design a successful campaign, how to test concepts, determine what works, and fine-tune your campaigns to maximize the Return on Investment (ROI). It also delves into more advanced topics affecting advertisers today, including contextual advertising (getting your website listed on thousands of websites without paying a penny), localized search (targeting a specific local area through search engines), and click fraud (how to protect yourself against it). The book also offers tips, techniques, and ideas contributed by 14 top experts in the industry.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781411628175"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1411628179"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 195,
+        "printType": "BOOK",
+        "categories": [
+          "Business & Economics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.1.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=TomPsv_WziwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=TomPsv_WziwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=TomPsv_WziwC&pg=PA31&dq=Search+phrase&hl=&cd=9&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=TomPsv_WziwC&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Pay_per_click_Search_Engine_Marketing_Ha.html?hl=&id=TomPsv_WziwC"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=TomPsv_WziwC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Low Cost Strategies to Attracting New Customers Using Google, Yahoo &amp; Other \u003cbr\u003e\n\u003cb\u003eSearch\u003c/b\u003e Engines Boris Mordkovich, Eugene Mordkovich ... A much more \u003cbr\u003e\nproductive option in the Google model is to use \u003cb\u003ePhrase\u003c/b\u003e Match and/or Exact Match\u003cbr\u003e\n."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "4ihBwtR4IN4C",
+      "etag": "uDVn4vqX05o",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/4ihBwtR4IN4C",
+      "volumeInfo": {
+        "title": "Windows XP Hacks",
+        "authors": [
+          "Preston Gralla"
+        ],
+        "publisher": "\"O'Reilly Media, Inc.\"",
+        "publishedDate": "2003",
+        "description": "Offers tips, techniques, and tools to help readers take advantage of Windows XP, covering such topics as the control panel, file downloads, firewalls, removing XP components, and cookies.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0596005113"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780596005115"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 392,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "averageRating": 3.0,
+        "ratingsCount": 7,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "2.0.0.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=4ihBwtR4IN4C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=4ihBwtR4IN4C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=4ihBwtR4IN4C&pg=PA85&dq=Search+phrase&hl=&cd=10&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=4ihBwtR4IN4C&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Windows_XP_Hacks.html?hl=&id=4ihBwtR4IN4C"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=4ihBwtR4IN4C&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "XP&#39;s \u003cb\u003eSearch\u003c/b\u003e Companion is too slow and the kinds of \u003cb\u003esearches\u003c/b\u003e it can perform are \u003cbr\u003e\nfairly limited. ... For example, to \u003cb\u003esearch\u003c/b\u003e for the \u003cb\u003ephrase\u003c/b\u003e &quot;That dog won&#39;t hunt,&quot; the \u003cbr\u003e\nquery would be: {\u003cb\u003ephrase\u003c/b\u003e} That dog won&#39;t hunt {/\u003cb\u003ephrase\u003c/b\u003e} There are two basic ways\u003cbr\u003e\n&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "0abXRzf6HLcC",
+      "etag": "FPUKjNIlwR8",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/0abXRzf6HLcC",
+      "volumeInfo": {
+        "title": "Ultimate Guide to Search Engine Optimization: Drive Traffic, Boost Conversion Rates and Make Lots of Money",
+        "authors": [
+          "Jon Rognerud"
+        ],
+        "publisher": "Jon Rognerud SEO",
+        "publishedDate": "2008-03-13",
+        "description": "A hands-on guide for marketers of any expertise level provides detailed coverage of a wide variety of topics, from keyword searching and link analysis/building to content strategies and position tracking, in a guide complemented by a CD-ROM of free SEO tools, software, and resources. Original.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "159918169X"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781599181691"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 240,
+        "printType": "BOOK",
+        "categories": [
+          "Business & Economics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "2.0.0.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=0abXRzf6HLcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=0abXRzf6HLcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=0abXRzf6HLcC&pg=PA176&dq=Search+phrase&hl=&cd=11&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=0abXRzf6HLcC&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/Ultimate_Guide_to_Search_Engine_Optimiza.html?hl=&id=0abXRzf6HLcC"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.de/books/download/Ultimate_Guide_to_Search_Engine_Optimiza-sample-pdf.acsm?id=0abXRzf6HLcC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=0abXRzf6HLcC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "&quot;Negative keywords&quot; refers to the words, terms, and \u003cb\u003ephrases\u003c/b\u003e advertisers would \u003cbr\u003e\nnot want to cause their ad to be displayed in \u003cb\u003esearch\u003c/b\u003e results. Suppose an online \u003cbr\u003e\nstore sells chess games. The store&#39;s Google AdWords campaign has an ad group\u003cbr\u003e\n&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "A0XBXzcqwkYC",
+      "etag": "NBzdxzuWToo",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/A0XBXzcqwkYC",
+      "volumeInfo": {
+        "title": "The Law Firm Internet Marketing Book",
+        "authors": [
+          "Jerry Work",
+          "Chris Work"
+        ],
+        "publisher": "Search Engine Marketing",
+        "publishedDate": "2008-12-01",
+        "description": "This no-nonsense book explains in detail how to manage an aggressive, effective multi-pronged Internet marketing campaign that will absolutely increase the amount of targeted traffic your web site receives. Don't play second fiddle to your competition...be the firm that EVERYBODY sees when they search for your services!Topics covered include:SEO and PPC keyword research.On-page optimization.Using blogging, content, and social networking sites to promote your web site.Using social bookmarking sites.Using an information hub to guide search engine spiders to find your links.Using XML sitemaps to help the search engines find your web pages.How to manage your pay per click accounts to generate the maximum number of leads for your marketing dollars.How to write winning paid search ads and landing pages.How all the pieces of search engine marketing fit together into a cohesive plan.",
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 308,
+        "printType": "BOOK",
+        "averageRating": 4.0,
+        "ratingsCount": 1,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.1.0.0.preview.1",
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.de/books/content?id=A0XBXzcqwkYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.de/books/content?id=A0XBXzcqwkYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.de/books?id=A0XBXzcqwkYC&pg=PA20&dq=Search+phrase&hl=&cd=12&source=gbs_api",
+        "infoLink": "http://books.google.de/books?id=A0XBXzcqwkYC&dq=Search+phrase&hl=&source=gbs_api",
+        "canonicalVolumeLink": "http://books.google.de/books/about/The_Law_Firm_Internet_Marketing_Book.html?hl=&id=A0XBXzcqwkYC"
+      },
+      "saleInfo": {
+        "country": "DE",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "DE",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://books.google.de/books/reader?id=A0XBXzcqwkYC&hl=&printsec=frontcover&output=reader&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Search engine optimization is doing a certain set of activities that causes a web \u003cbr\u003e\npage to rank highly in search engines for a specific \u003cb\u003esearch phrase\u003c/b\u003e. It falls \u003cbr\u003e\ngenerally into two categories: “on-page” and “off- page”; also referred to as “on-\u003cbr\u003e\nsite” and&nbsp;..."
+      }
+    }
+  ]
+}

@@ -59,15 +59,12 @@ class BooksController < ApplicationController
     @book.cover = params[:book][:cover] unless params[:book][:cover].blank?
 
     respond_to do |format|
-      if params[:add_from_search].present?
-        @book.save
+      if @book.save
         format.js
+        format.html { redirect_to books_path, notice: general_added_message(@book) }
       else
-        if @book.save
-          format.html { redirect_to books_path, notice: general_added_message(@book) }
-        else
-          format.html { render :new }
-        end
+        format.js
+        format.html { render :new }
       end
     end
   end

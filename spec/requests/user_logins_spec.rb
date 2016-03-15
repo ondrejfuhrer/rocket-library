@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'User Logins', type: :feature do
+RSpec.describe 'User Logins' do
 
   it 'should get login page' do
     visit root_path

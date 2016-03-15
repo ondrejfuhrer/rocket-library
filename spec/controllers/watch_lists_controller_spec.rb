@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe WatchListsController, type: :controller do
+RSpec.describe WatchListsController do
 
 end

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
-describe 'Ability setup' do
-
+RSpec.describe Ability do
   it 'for regular user' do
     user = FactoryGirl.build :user, role: :user
     user2 = FactoryGirl.build :user, role: :user
@@ -10,7 +9,7 @@ describe 'Ability setup' do
     other_book = FactoryGirl.build :book, user: user2
     book_without_user = FactoryGirl.build :book, user: nil
 
-    rental = Rental.new book:users_book, user: user
+    rental = Rental.new book: users_book, user: user
     other_rental = Rental.new book: book_without_user, user: user2
 
     ability = Ability.new user
@@ -49,7 +48,7 @@ describe 'Ability setup' do
     other_book = FactoryGirl.build :book, user: user2
     book_without_user = FactoryGirl.build :book, user: nil
 
-    rental = Rental.new book:users_book, user: user
+    rental = Rental.new book: users_book, user: user
     other_rental = Rental.new book: book_without_user, user: user2
 
     ability = Ability.new user
@@ -88,7 +87,7 @@ describe 'Ability setup' do
     other_book = FactoryGirl.build :book, user: user2
     book_without_user = FactoryGirl.build :book, user: nil
 
-    rental = Rental.new book:users_book, user: user
+    rental = Rental.new book: users_book, user: user
     other_rental = Rental.new book: book_without_user, user: user2
 
     ability = Ability.new user

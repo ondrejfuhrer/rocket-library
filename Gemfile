@@ -70,16 +70,22 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'meta_request'
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'database_cleaner'
   gem 'rspec-rails'
   gem 'guard-rspec'
   gem 'ffaker'
   gem 'simplecov'
   gem 'simplecov-csv'
   gem 'simplecov-html'
+  gem 'selenium-webdriver'
   gem 'minitest-reporters'
   # JUnit formatter
   gem 'yarjuf'
+
 end
+
+gem 'webmock', group: :test
 
 # Access an IRB console on exception pages or by using <%= console %> in views
 gem 'web-console', '~> 2.0', group: :development
