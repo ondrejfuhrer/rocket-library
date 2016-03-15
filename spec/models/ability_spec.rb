@@ -36,6 +36,9 @@ describe 'Ability setup' do
     expect(ability).to be_able_to(:create, Rental)
     expect(ability).to be_able_to(:new, Rental)
     expect(ability).to be_able_to(:destroy, rental)
+
+    # WatchList
+    expect(ability).to be_able_to(:create, WatchList)
   end
 
   it 'for user with manager rights' do
@@ -72,6 +75,9 @@ describe 'Ability setup' do
     expect(ability).to be_able_to(:create, Rental)
     expect(ability).to be_able_to(:new, Rental)
     expect(ability).to be_able_to(:destroy, rental)
+
+    # WatchList
+    expect(ability).to be_able_to(:create, WatchList)
   end
 
   it 'for admin' do
@@ -109,8 +115,10 @@ describe 'Ability setup' do
     expect(ability).to be_able_to(:new, Rental)
     expect(ability).to be_able_to(:destroy, rental)
 
+    # WatchList
+    expect(ability).to be_able_to(:create, WatchList)
+
     expect(ability).to be_able_to(:manage, :all)
   end
-
 
 end

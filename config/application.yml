@@ -1,5 +1,7 @@
 defaults: &defaults
   application_name: 'Rocket Library'
+  mailer:
+    default_sender: 'info@rocket-library.com'
 
 development:
   <<: *defaults

@@ -17,9 +17,12 @@ class Ability
     can :new, Rental
     can :create, Rental
 
+    # WatchLists
+    can :create, WatchList
+
     # Rentals
     can :destroy, Rental do |r|
-      r.user == user
+      (r.user == user)
     end
 
     if user.role.manager?

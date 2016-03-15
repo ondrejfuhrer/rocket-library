@@ -17,6 +17,11 @@
               <%= link_to(t('book.rent'), rentals_path(sku: book.sku, format: :js), method: :post, remote: true, class: 'btn btn-success') if can? :create, Rental and book.active? %>
               <% if book.rented? %>
                 <% rental = book.rentals.active.first %>
+                <% if can?(:create, WatchList) and cannot?(:destroy, rental) and not current_user.has_watch_list_for_rental(rental) %>
+                  <%= link_to rental_watch_lists_path(rental, format: :js), method: :post, remote: true, class: 'btn btn-warning' do %>
+                    <i class="fa fa-clock-o"></i>
+                  <% end %>
+                <% end %>
                 <% if can? :destroy, rental %>
                   <%= link_to t('book.return'), '#', class: 'btn btn-info', data: { toggle: :modal, target: '#delete-modal', title: book.name, author: book.author, form_action: rental_path(rental) } %>
                 <% end %>

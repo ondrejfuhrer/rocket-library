@@ -110,5 +110,13 @@ en:
       already_rented: 'Book with SKU [%{sku}] has been already rented'
   dashboard:
     title: 'Dashboard'
+  user_mailer:
+    watchlist:
+      subject: 'Book [%{book_name}] from your watchlist has been returned'
+      salutation: 'Hello %{name},'
+      message_begin: 'I am happy to inform you, that a book [%{book_name}] from your watchlist has been returned on %{return_date}.'
+      return_message: 'It was returned by %{return_name} with this message:'
+      no_return_message: 'It was returned by %{return_name} but unfortunately there was no message attached. Hopefully you will find the desired book'
+      footer: 'Your %{app_name} team'
 
 

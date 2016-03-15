@@ -1,0 +1,12 @@
+<%= t('user_mailer.watchlist.salutation', { name: @user.full_name }) %>
+
+<%= t('user_mailer.watchlist.message_begin', { book_name: @rental.book.name, return_date: @rental.returned_at }) %>
+
+<% if @rental.return_message.blank? %>
+  <%= t('user_mailer.watchlist.no_return_message', { return_name: @rental.user.full_name }) %>
+<% else %>
+  <%= t('user_mailer.watchlist.return_message', { return_name: @rental.user.full_name }) %>
+  <%= @rental.return_message %>
+<% end %>
+
+<%= t('user_mailer.watchlist.footer', { app_name: Rails.application.config.x[:application_name] }) %>

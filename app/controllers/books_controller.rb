@@ -99,6 +99,15 @@ class BooksController < ApplicationController
     params.require(:book).permit(:name, :author, :sku, :isbn)
   end
 
+  # Returns requested number of books from Google Books library
+  #
+  # === Parameters
+  # @param [Numeric] count
+  # @param [Numeric] page Default is 1
+  #
+  # === Return
+  # @return [Array<Book>]
+  #
   def find_books(count, page = 1)
     results = []
 
