@@ -32,9 +32,5 @@ class Ability
         (book.user == user)
       end
     end
-
-    can [:read, :update], User do |u|
-      (u == user)
-    end
   end
 end

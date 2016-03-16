@@ -12,6 +12,8 @@ before_install:
   - sudo apt-get -y update
   - sudo apt-get -y install libpq-dev
   - sudo apt-get -y install libgmp-dev
+  - sudo apt-get -y install libqt4-dev
+  - sudo apt-get -y install xvfb
   - gem install bundler --pre
   - bundle update rake
 
@@ -23,4 +25,4 @@ before_script:
 
 # write the rspec tests to the output dir
 script:
-  - rspec -f JUnit -o shippable/testresults/results.xml
+  - DISPLAY=localhost:1.0 xvfb-run rspec -f JUnit -o shippable/testresults/results.xml
