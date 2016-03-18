@@ -12,8 +12,8 @@ dependencies:
 
 test:
   override:
-    - RAILS_ENV=test bundle exec rspec --format JUnit -o $CIRCLE_TEST_REPORTS/rspec/junit.xml:
-      parallel: true
+    - bundle exec rspec --format JUnit --out $CIRCLE_TEST_REPORTS/rspec.xml:
+        parallel: true
         files:
           - spec/controllers/*.rb
           - spec/mailers/*.rb
