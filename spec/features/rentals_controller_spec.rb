@@ -122,8 +122,10 @@ RSpec.describe RentalsController do
     Warden.test_mode!
 
     user = FactoryGirl.create :user
+    watchlist_user = FactoryGirl.create :user
     book = FactoryGirl.create :book, sku: 'test-sku'
-    Rental.create user: user, book: book
+    rental = Rental.create user: user, book: book
+    WatchList.create rental: rental, user: watchlist_user
 
     login_as user, scope: :user, run_callbacks: false
 
@@ -133,7 +135,7 @@ RSpec.describe RentalsController do
 
     click_link 'Return'
 
-    return_message = 'This is optional return message'
+    return_message = 'This is optional return message with more information'
 
     fill_in 'return_message', with: return_message
 
@@ -147,14 +149,24 @@ RSpec.describe RentalsController do
     expect(user.rentals.first.returned?).to be true
     expect(user.rentals.first.book).to eq book
     expect(user.rentals.first.return_message).to eq return_message
+
+    expect(ActionMailer::Base.deliveries.count).to eq 1
+    delivery = ActionMailer::Base.deliveries.first
+    expect(delivery.to).to eq [watchlist_user.email]
+    expect(delivery.subject).to eq "Book [#{book.name}] from your watchlist has been returned"
+    expect(delivery.body.encoded).to match(return_message)
   end
 
   it 'should return book from account page', js: true do
     Warden.test_mode!
 
     user = FactoryGirl.create :user
+    watchlist_user = FactoryGirl.create :user
+    watchlist_user2 = FactoryGirl.create :user
     book = FactoryGirl.create :book, sku: 'test-sku'
-    Rental.create user: user, book: book
+    rental = Rental.create user: user, book: book
+    WatchList.create rental: rental, user: watchlist_user
+    WatchList.create rental: rental, user: watchlist_user2
 
     login_as user, scope: :user, run_callbacks: false
 
@@ -177,6 +189,15 @@ RSpec.describe RentalsController do
     expect(user.rentals.first.returned?).to be true
     expect(user.rentals.first.book).to eq book
     expect(user.rentals.first.return_message).to eq return_message
+
+    expect(ActionMailer::Base.deliveries.count).to eq 2
+    missing_receivers = [watchlist_user.email, watchlist_user2.email]
+    ActionMailer::Base.deliveries.each do |delivery|
+      missing_receivers -= delivery.to
+      expect(delivery.subject).to eq "Book [#{book.name}] from your watchlist has been returned"
+      expect(delivery.body.encoded).to match(return_message)
+    end
+    expect(missing_receivers).to eq []
   end
 
 end

@@ -68,6 +68,7 @@ RSpec.configure do |config|
 
   config.after :each do
     Warden.test_reset!
+    ActionMailer::Base.deliveries.clear
   end
 
   config.include WaitForAjax, type: :feature
