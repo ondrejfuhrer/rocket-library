@@ -15,4 +15,4 @@ test:
     - bundle exec rspec --format JUnit --out $CIRCLE_TEST_REPORTS/rspec.xml:
         parallel: true
         files:
-          - spec/*/*.rb
+          - spec/*/*_spec.rb
