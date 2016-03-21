@@ -15,7 +15,7 @@ class Rental < ActiveRecord::Base
       # @type [Rental] rental
       rental.book.release
       rental.watch_lists.active.each do |w|
-        UserMailer.watchlist(w.user, rental).deliver
+        UserMailer.watchlist(w.user, rental).deliver_now
         w.fulfill
         w.save!
       end

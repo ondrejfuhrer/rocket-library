@@ -5,7 +5,7 @@
         <%- if devise_mapping.omniauthable? %>
             <%- resource_class.omniauth_providers.each do |provider| %>
                 <div class="text-center">
-                  <%= link_to omniauth_authorize_path(resource_name, provider) do %>
+                  <%= link_to omniauth_authorize_path(resource_name, provider), id: 'google-login-link' do %>
                       <%= image_tag 'btn_google_signin.png' %>
                   <% end %>
                 </div>
