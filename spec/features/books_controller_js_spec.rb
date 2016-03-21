@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BooksController, type: :feature do
+RSpec.describe BooksController do
   it 'User should add book from Google', js: true do
     Warden.test_mode!
 

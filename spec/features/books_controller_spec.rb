@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe BooksController, type: :feature do
+RSpec.describe BooksController do
   it 'Index page should be secured by login' do
     visit books_path
 

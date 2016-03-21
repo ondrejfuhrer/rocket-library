@@ -70,4 +70,38 @@ RSpec.describe User do
       expect(result.google_avatar_url).to eq(new_image_url)
     end
   end
+
+  context '#has_watch_list_for_rental' do
+    it 'should contain rental' do
+      rental_user = FactoryGirl.create :user
+      book = FactoryGirl.create :book
+      rental = Rental.create user: rental_user, book: book
+      user = FactoryGirl.create :user
+      WatchList.create user: user, rental: rental
+
+      expect(user.has_watch_list_for_rental(rental)).to be true
+    end
+
+    it 'should not contain rental when empty' do
+      rental_user = FactoryGirl.create :user
+      book = FactoryGirl.create :book
+      rental = Rental.create user: rental_user, book: book
+      user = FactoryGirl.create :user
+
+      expect(user.has_watch_list_for_rental(rental)).to be false
+    end
+
+    it 'should not contain rental when not empty' do
+      rental_user = FactoryGirl.create :user
+      book = FactoryGirl.create :book
+      different_book = FactoryGirl.create :book
+      rental = Rental.create user: rental_user, book: book
+      different_rental = Rental.create user: rental_user, book: different_book
+      user = FactoryGirl.create :user
+
+      WatchList.create user: user, rental: different_rental
+
+      expect(user.has_watch_list_for_rental(rental)).to be false
+    end
+  end
 end

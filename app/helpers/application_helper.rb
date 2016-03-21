@@ -58,15 +58,15 @@ module ApplicationHelper
     link_to link do
       html = []
       if not user.google_avatar_url.blank?
-        html << image_tag("#{user.google_avatar_url}?sz=30")
+        html << image_tag("#{user.google_avatar_url}?sz=30", class: 'user-avatar')
       elsif user.email.present?
-        html << image_tag("#{(request.ssl? ? 'https://secure' : 'http://www')}.gravatar.com/avatar/#{Digest::MD5.hexdigest user.email}?s=30", alt: '')
+        html << image_tag("#{(request.ssl? ? 'https://secure' : 'http://www')}.gravatar.com/avatar/#{Digest::MD5.hexdigest user.email}?s=30", alt: '', class: 'user-avatar')
       end
 
       if user.full_name.blank?
-        html << content_tag(:span, user.email)
+        html << content_tag(:span, user.email, class: 'user-name')
       else
-        html << content_tag(:span, user.full_name)
+        html << content_tag(:span, user.full_name, class: 'user-name')
       end
       html.join.html_safe
     end
