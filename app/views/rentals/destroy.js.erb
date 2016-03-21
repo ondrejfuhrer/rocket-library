@@ -2,5 +2,5 @@
 alert('<%= t('rental.error.destroy') %>');
 <% else %>
 $('#delete-modal').modal('hide');
-$('#book-row-<%= @rental.book.id %>').replaceWith("<%= j render(partial: 'books/books_row', locals: {book: @rental.book}).html_safe %>");
+$('#book-<%= @rental.book.id %>').replaceWith("<%= j render(partial: 'books/book', locals: {book: @rental.book}).html_safe %>");
 <% end %>

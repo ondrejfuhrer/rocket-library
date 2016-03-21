@@ -1,30 +1,6 @@
-# This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV['RAILS_ENV'] ||= 'test'
-require File.expand_path('../../config/environment', __FILE__)
-
-# Prevent database truncation if the environment is production
-abort('The Rails environment is running in production mode!') if Rails.env.production?
-
-require 'spec_helper'
-require 'rspec/rails'
-
-# Add additional requires below this line. Rails is not loaded until this point!
-require 'ffaker'
-require 'cancan/matchers'
-require 'capybara/webkit/matchers'
-require 'minitest/reporters'
-require 'support/shared_db_connection'
-
-WebMock.stub_request(:any, /.*googleapis.*/).to_return(:status => 200, :body => File.read("#{::Rails.root}/spec/fixtures/google_response.json"), :headers => {})
-
 ENV['COVERAGE_REPORTS'] ||= 'tmp/coverage'
 ENV['CI_REPORTS'] ||= 'tmp/testresults'
 ENV['CI_COVERAGE_FORMATTER'] ||= 'html'
-
-MiniTest::Reporters.use! [
-                           MiniTest::Reporters::DefaultReporter.new,
-                           MiniTest::Reporters::JUnitReporter.new(ENV['CI_REPORTS'])
-                         ]
 
 if ENV['CIRCLE_ARTIFACTS']
   dir = File.join(ENV['CIRCLE_ARTIFACTS'], 'coverage')
@@ -43,6 +19,31 @@ case ENV['CI_COVERAGE_FORMATTER']
 end
 
 SimpleCov.start 'rails'
+
+# This file is copied to spec/ when you run 'rails generate rspec:install'
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../../config/environment', __FILE__)
+
+# Prevent database truncation if the environment is production
+abort('The Rails environment is running in production mode!') if Rails.env.production?
+
+MiniTest::Reporters.use! [
+                           MiniTest::Reporters::DefaultReporter.new,
+                           MiniTest::Reporters::JUnitReporter.new(ENV['CI_REPORTS'])
+                         ]
+
+require 'spec_helper'
+require 'rspec/rails'
+
+# Add additional requires below this line. Rails is not loaded until this point!
+require 'ffaker'
+require 'cancan/matchers'
+require 'capybara/webkit/matchers'
+require 'minitest/reporters'
+require 'support/shared_db_connection'
+
+WebMock.stub_request(:any, /.*googleapis.*/).to_return(:status => 200, :body => File.read("#{::Rails.root}/spec/fixtures/google_response.json"), :headers => {})
+WebMock.stub_request(:any, /.*avatar.google.com.*/).to_return(:status => 200, :body => File.read("#{::Rails.root}/app/assets/images/cover_placeholder_small.jpg"), :headers => {})
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
