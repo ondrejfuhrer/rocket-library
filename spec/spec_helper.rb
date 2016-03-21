@@ -65,9 +65,6 @@ RSpec.configure do |config|
   Capybara.default_max_wait_time = 3
 
   config.include Warden::Test::Helpers
-  config.before :each do
-
-  end
 
   config.after :each do
     Warden.test_reset!
