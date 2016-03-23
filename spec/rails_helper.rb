@@ -41,6 +41,7 @@ require 'cancan/matchers'
 require 'capybara/webkit/matchers'
 require 'minitest/reporters'
 require 'support/shared_db_connection'
+require 'devise'
 
 WebMock.stub_request(:any, /.*googleapis.*/).to_return(:status => 200, :body => File.read("#{::Rails.root}/spec/fixtures/google_response.json"), :headers => {})
 WebMock.stub_request(:any, /.*avatar.google.com.*/).to_return(:status => 200, :body => File.read("#{::Rails.root}/app/assets/images/cover_placeholder_small.jpg"), :headers => {})
@@ -103,4 +104,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
   config.include FactoryGirl::Syntax::Methods
+
+  config.include Devise::TestHelpers, :type => :controller
 end

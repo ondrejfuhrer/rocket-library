@@ -1,0 +1,52 @@
+<div class="row">
+  <ol class="breadcrumb" style="margin-bottom: 5px;">
+    <li class="active"><%= link_to t('application.back'), reports_index_path %></li>
+  </ol>
+</div>
+<div class="row">
+  <div class="col-xs-10">
+    <h2><%= report.formatted_title %></h2>
+  </div>
+  <div class="col-xs-2 header-margin">
+    <%= t('report.download_as') %>
+    <%= link_to 'CSV', formatted_dossier_report_path('csv', report), class: 'download-csv' %> |
+    <%= link_to 'XLS', formatted_dossier_report_path('xls', report), class: 'download-xls' %>
+  </div>
+</div>
+<div class="row">
+  <table class="table table-striped dossier report">
+    <% if report.results.body.empty? %>
+      <tr>
+        <td><p class="lead text-center"><%= t('report.empty_result') %></p></td>
+      </tr>
+    <% else %>
+      <thead>
+      <tr>
+        <% report.results.headers.each do |header| %>
+          <th><%= report.format_header(header) %></th>
+        <% end %>
+      </tr>
+      </thead>
+      <tbody>
+      <% report.results.body.each do |row| %>
+        <tr class="report-row">
+          <% row.each do |value| %>
+            <td><%= value %></td>
+          <% end %>
+        </tr>
+      <% end %>
+      </tbody>
+      <% if report.results.footers.any? %>
+        <tfoot>
+        <% report.results.footers.each do |row| %>
+          <tr>
+            <% row.each do |value| %>
+              <th><%= value %></th>
+            <% end %>
+          </tr>
+        <% end %>
+        </tfoot>
+      <% end %>
+    <% end %>
+  </table>
+</div>

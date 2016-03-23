@@ -25,6 +25,7 @@ en:
     books: Books
     admin: Admin
     login: Login
+    reports: Reports
     logout: 'Log out'
   book:
     add: 'Add a book'
@@ -118,5 +119,15 @@ en:
       return_message: 'It was returned by %{return_name} with this message:'
       no_return_message: 'It was returned by %{return_name} but unfortunately there was no message attached. Hopefully you will find the desired book'
       footer: 'Your %{app_name} team'
+  date:
+    datepicker:
+      default: 'dd/mm/yyyy'
+    formats:
+      default: '%d/%m/%Y'
+  report:
+    generate: 'Generate'
+    download_as_optional: 'Download as (optional):'
+    download_as: 'Download as:'
+    empty_result: 'No records found'
 
 

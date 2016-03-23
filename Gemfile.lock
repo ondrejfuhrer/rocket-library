@@ -49,6 +49,8 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-datepicker-rails (1.6.0.1)
+      railties (>= 3.0)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -99,6 +101,14 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    dossier (2.13.1)
+      actionmailer (>= 3.2)
+      actionpack (>= 3.2)
+      activesupport (>= 3.2)
+      arel (>= 3.0)
+      haml (>= 3.1)
+      railties (>= 3.2)
+      responders (>= 1.1)
     enumerize (1.1.1)
       activesupport (>= 3.2)
     erubis (2.7.0)
@@ -152,7 +162,7 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.3)
-    jwt (1.5.1)
+    jwt (1.5.3)
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -192,17 +202,17 @@ GEM
     notiffany (0.0.8)
       nenv (~> 0.1)
       shellany (~> 0.0)
-    oauth2 (1.1.0)
+    oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
-      jwt (~> 1.0, < 1.5.2)
+      jwt (~> 1.0)
       multi_json (~> 1.3)
       multi_xml (~> 0.5)
-      rack (>= 1.2, < 3)
+      rack (~> 1.2)
     omniauth (1.3.1)
       hashie (>= 1.2, < 4)
       rack (>= 1.0, < 3)
-    omniauth-google-oauth2 (0.4.0)
-      jwt (~> 1.5.0)
+    omniauth-google-oauth2 (0.4.1)
+      jwt (~> 1.5.2)
       multi_json (~> 1.3)
       omniauth (>= 1.1.1)
       omniauth-oauth2 (>= 1.3.1)
@@ -315,9 +325,8 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    selenium-webdriver (2.52.0)
+    selenium-webdriver (2.53.0)
       childprocess (~> 0.5)
-      multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
     shellany (0.0.1)
@@ -351,8 +360,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
-    time_difference (0.4.2)
-      activesupport
     turbolinks (2.5.3)
       coffee-rails
     tzinfo (1.2.2)
@@ -385,6 +392,7 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   better_errors
+  bootstrap-datepicker-rails
   bootstrap-sass (~> 3.3.6)
   bootstrap_form
   bullet
@@ -396,6 +404,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
+  dossier
   enumerize
   factory_girl_rails
   ffaker
@@ -425,7 +434,6 @@ DEPENDENCIES
   spring
   sqlite3
   state_machines-activerecord
-  time_difference
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)

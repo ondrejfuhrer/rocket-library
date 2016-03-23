@@ -16,6 +16,7 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require alerts
+//= require bootstrap-datepicker
 
 $(document).on('show.bs.modal', '#delete-modal', function (event) {
     var button = $(event.relatedTarget); // Button / link that triggered the modal

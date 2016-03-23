@@ -6,6 +6,9 @@ class UserMailer < ApplicationMailer
   # @param [User] user
   # @param [Rental] rental
   #
+  # === Return
+  # @return [Mail::Message]
+  #
   def watchlist(user, rental)
     @user = user
     @rental = rental

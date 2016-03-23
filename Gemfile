@@ -28,6 +28,7 @@ gem 'omniauth-google-oauth2'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'bootstrap_form'
+gem 'bootstrap-datepicker-rails'
 
 # Font Awesome
 gem 'font-awesome-rails'
@@ -50,11 +51,11 @@ gem 'googlebooks'
 gem 'mini_magick'
 gem 'carrierwave'
 
-# Time difference for difference calculations
-gem 'time_difference'
-
 # Search engine
 gem 'ransack'
+
+# Reports
+gem 'dossier'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

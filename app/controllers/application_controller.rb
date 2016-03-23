@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  # All application controllers should be protected through login
+  before_action :authenticate_user!
+
   # Creates a simple flash message for given object with a given message.
   # This function does not do any translations, so all given parameters (especially message)
   # needs to be already translated
@@ -22,6 +25,8 @@ class ApplicationController < ActionController::Base
   #
   # === Parameters
   # @param [Object] object
+  #
+  # === Return
   # @return [String]
   #
   def general_added_message(object)
@@ -34,6 +39,8 @@ class ApplicationController < ActionController::Base
   #
   # === Parameters
   # @param [Object] object
+  #
+  # === Return
   # @return [String]
   #
   def general_updated_message(object)
@@ -46,11 +53,18 @@ class ApplicationController < ActionController::Base
   #
   # === Parameters
   # @param [Object] object
+  #
+  # === Return
   # @return [String]
   #
   def general_removed_message(object)
     class_name = object.class.model_name.human
     general_message_translation class_name, 'removed'
+  end
+
+  # Authorize all actions for reporting through CanCan gem
+  def authorize_reports!
+    authorize! :access, :reports
   end
 
   private
@@ -63,6 +77,8 @@ class ApplicationController < ActionController::Base
   # === Parameters
   # @param [String] class_name
   # @param [String] type
+  #
+  # === Return
   # @return [String]
   #
   def general_message_translation(class_name, type)

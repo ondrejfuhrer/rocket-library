@@ -40,6 +40,7 @@ module ApplicationHelper
   # @return [String]
   #
   def header_user_link
+    @current_user ||= current_user
     get_edit_user_link @current_user, dashboard_path
   end
 
