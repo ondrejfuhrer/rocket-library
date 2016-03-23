@@ -1,0 +1,37 @@
+{
+  "name": "rocket-library",
+  "scripts": {
+  },
+  "env": {
+    "LANG": {
+      "required": true
+    },
+    "RACK_ENV": {
+      "required": true
+    },
+    "RAILS_ENV": {
+      "required": true
+    },
+    "RAILS_SERVE_STATIC_FILES": {
+      "required": true
+    },
+    "SECRET_GOOGLE_CLIENT_ID": {
+      "required": true
+    },
+    "SECRET_GOOGLE_CLIENT_SECRET": {
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "required": true
+    }
+  },
+  "addons": [
+    "mailgun",
+    "heroku-postgresql"
+  ],
+  "buildpacks": [
+    {
+      "url": "urn:buildpack:heroku/ruby"
+    }
+  ]
+}
