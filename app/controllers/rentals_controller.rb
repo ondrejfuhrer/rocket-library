@@ -1,6 +1,5 @@
 class RentalsController < ApplicationController
 
-  before_action :authenticate_user!
   load_and_authorize_resource
 
   def destroy
@@ -13,7 +12,6 @@ class RentalsController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -41,5 +39,4 @@ class RentalsController < ApplicationController
       end
     end
   end
-
 end

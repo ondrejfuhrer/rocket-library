@@ -1,6 +1,10 @@
+# Honestly I have no idea why this test needs to be first, but when it was placed
+# inside features specs it was failing. When moved here (so it is executed first)
+# the test is successfully passing
+
 require 'rails_helper'
 
-RSpec.describe BooksController do
+RSpec.describe BooksController, type: :feature do
   it 'User should add book from Google', js: true do
     Warden.test_mode!
 

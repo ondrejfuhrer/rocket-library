@@ -21,6 +21,7 @@ RSpec.describe Ability do
     expect(ability).not_to be_able_to(:manage, other_book)
     expect(ability).not_to be_able_to(:manage, book_without_user)
     expect(ability).not_to be_able_to(:manage, Rental)
+    expect(ability).not_to be_able_to(:access, :reports)
 
     # Books
     expect(ability).to be_able_to(:read, Book)
@@ -77,6 +78,8 @@ RSpec.describe Ability do
 
     # WatchList
     expect(ability).to be_able_to(:create, WatchList)
+
+    expect(ability).to be_able_to(:access, :reports)
   end
 
   it 'for admin' do
@@ -118,6 +121,7 @@ RSpec.describe Ability do
     expect(ability).to be_able_to(:create, WatchList)
 
     expect(ability).to be_able_to(:manage, :all)
+    expect(ability).to be_able_to(:access, :reports)
   end
 
 end

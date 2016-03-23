@@ -5,6 +5,9 @@ module BooksHelper
   # === Parameters
   # @param [String] state
   #
+  # === Return
+  # @return [String]
+  #
   def get_bootstrap_class_for_state(state)
     case state
       when 'active'

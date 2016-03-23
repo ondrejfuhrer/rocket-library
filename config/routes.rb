@@ -21,4 +21,6 @@ Rails.application.routes.draw do
     resources :watch_lists, only: [:create]
   end
 
+  get '/reports', to: 'reports#index', as: :reports_index
+
 end
