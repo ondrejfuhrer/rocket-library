@@ -30,15 +30,15 @@ class RentalReport < Dossier::Report
   end
 
   def format_avg_rental_time(word)
-    TimeDifference.calculate(word).humanize_general
+    TimeDifference.calculate(word).in_general.humanize
   end
 
   def format_max_rental_time(word)
-    TimeDifference.calculate(word).humanize_general
+    TimeDifference.calculate(word).in_general.humanize
   end
 
   def format_min_rental_time(word)
-    TimeDifference.calculate(word).humanize_general
+    TimeDifference.calculate(word).in_general.humanize
   end
 
   # We override the Dossier::Reports#raw_results function to provide the results from Dossier::Reports#results

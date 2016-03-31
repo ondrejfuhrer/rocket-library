@@ -42,6 +42,6 @@ class Rental < ActiveRecord::Base
   #
   def rental_time
     from_date = (self.returned? ? self.returned_at : Time.current).utc
-    TimeDifference.between(from_date, self.created_at.utc).humanize_general
+    TimeDifference.between(from_date, self.created_at.utc, true).in_general.humanize
   end
 end

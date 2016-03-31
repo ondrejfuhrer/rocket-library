@@ -65,22 +65,6 @@ en:
     all: All
     sign_up: 'Sign Up'
     dont_have_account: "Don't have an account?"
-    year:
-      one: '1 year'
-      other: '%{count} years'
-    month:
-      one: '1 month'
-      other: '%{count} months'
-    week:
-      one: '1 week'
-      other: '%{count} weeks'
-    day:
-      one: '1 day'
-      other: '%{count} days'
-    hour:
-      one: '1 hour'
-      other: '%{count} hours'
-    less_than_hour: 'less than hour'
     message:
       item_added: 'Item has been successfully added'
       general_added: '%{class} has been successfully added'
