@@ -103,6 +103,12 @@ en:
       return_message: 'It was returned by %{return_name} with this message:'
       no_return_message: 'It was returned by %{return_name} but unfortunately there was no message attached. Hopefully you will find the desired book'
       footer: 'Your %{app_name} team'
+    watchlist_unfulfilled:
+      subject: 'Book [%{book_name}] from your watchlist has been rented again!'
+      salutation: 'Hello %{name},'
+      message_begin: 'Unfortunately book [%{book_name}] from your watchlist has been rented again by %{rented_name}.'
+      message_end: "We'll keep this watchlist active until you unsubscribe or rent your desired book."
+      footer: 'Your %{app_name} team'
   date:
     datepicker:
       default: 'dd/mm/yyyy'
