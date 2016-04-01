@@ -1,0 +1,24 @@
+en:
+  time_difference:
+    year:
+      one: '1 year'
+      other: '%{count} years'
+    month:
+      one: '1 month'
+      other: '%{count} months'
+    week:
+      one: '1 week'
+      other: '%{count} weeks'
+    day:
+      one: '1 day'
+      other: '%{count} days'
+    hour:
+      one: '1 hour'
+      other: '%{count} hours'
+    minute:
+      one: '1 minute'
+      other: '%{count} minutes'
+    second:
+      one: '1 second'
+      other: '%{count} seconds'
+    less_than_hour: 'less than hour'
