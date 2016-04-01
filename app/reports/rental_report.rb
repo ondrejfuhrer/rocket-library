@@ -41,7 +41,7 @@ class RentalReport < Dossier::Report
     TimeDifference.calculate(word).in_general.humanize
   end
 
-  # We override the Dossier::Reports#raw_results function to provide the results from Dossier::Reports#results
+  # We override the Dossier::Report#raw_results function to provide the results from Dossier::Report#results
   # That causes that we got the formatting also for XLS and CSV files
   def raw_results
     results
