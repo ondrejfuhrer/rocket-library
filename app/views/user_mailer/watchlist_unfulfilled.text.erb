@@ -1,0 +1,7 @@
+<%= t('user_mailer.watchlist_unfulfilled.salutation', { name: @user.full_name }) %>
+
+<%= t('user_mailer.watchlist_unfulfilled.message_begin', { book_name: @rental.book.name, rented_name: @rental.user.full_name }) %>
+
+<%= t('user_mailer.watchlist_unfulfilled.message_end')%>
+
+<%= t('user_mailer.watchlist_unfulfilled.footer', { app_name: Rails.application.config.x[:application_name] }) %>

@@ -16,8 +16,6 @@ class Rental < ActiveRecord::Base
       rental.book.release
       rental.watch_lists.active.each do |w|
         UserMailer.watchlist(w.user, rental).deliver_now
-        w.fulfill
-        w.save!
       end
     end
   end
@@ -31,7 +29,19 @@ class Rental < ActiveRecord::Base
   scope :returned, -> { with_state(:returned) }
 
   after_create do
-    self.book.rent
+    book.rent
+    book.rentals.each do |rental|
+      rental.watch_lists.each do |w|
+        if w.active?
+          if w.user == user
+            w.fulfill
+            w.save!
+          else
+            UserMailer.watchlist_unfulfilled(w.user, self).deliver_now
+          end
+        end
+      end
+    end
   end
 
   # Returns a rental time in human readable format. If the rental is still active, the value shows for how long it is rented until now,
