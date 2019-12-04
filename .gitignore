@@ -24,3 +24,6 @@
 
 # File uploads
 public/uploads/*
+
+# Ignore vendor
+vendor/*
