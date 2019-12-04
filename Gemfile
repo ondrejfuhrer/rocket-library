@@ -26,7 +26,7 @@ gem 'cancancan', '~> 1.10'
 gem 'omniauth-google-oauth2'
 
 # Bootstrap
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'bootstrap_form'
 gem 'bootstrap-datepicker-rails'
 
